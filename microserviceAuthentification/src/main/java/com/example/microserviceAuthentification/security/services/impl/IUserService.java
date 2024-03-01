@@ -1,2 +1,4 @@
-package com.example.microserviceAuthentification.security.services.impl;public interface IUserService {
+package com.example.microserviceAuthentification.security.services.impl;
+
+public interface IUserService {
 }
