@@ -29,4 +29,33 @@ public class AccountService {
         List<Role> roles = roleRepository.findAll();
         return RoleTransformer.entityToDtoList(roles);
     }
+
+    public UserDto addNewUser(UserDto userDto){
+        User createUser = UserTransformer.dtoToEntity(userDto);
+        userRepository.save(createUser);
+        return UserTransformer.entityToDto(createUser);
+    }
+
+    public RoleDto addNewRole(RoleDto roleDto){
+        Role createRole = RoleTransformer.dtoToEntity(roleDto);
+        roleRepository.save(createRole);
+        return RoleTransformer.entityToDto(createRole);
+    }
+
+    public void addRoleToUser(String userName, String roleName){
+        User user = userRepository.findByUserName(userName);
+        Role role = roleRepository.findByRoleName(roleName);
+
+        user.getRoles().add(role);
+    }
+
+    public UserDto getById(Long id){
+        User userById = userRepository.findById(id).orElse(null);
+        return UserTransformer.entityToDto(userById);
+    }
+
+    public UserDto getByUserName(String userName){
+        User user = userRepository.findByUserName(userName);
+        return UserTransformer.entityToDto(user);
+    }
 }
