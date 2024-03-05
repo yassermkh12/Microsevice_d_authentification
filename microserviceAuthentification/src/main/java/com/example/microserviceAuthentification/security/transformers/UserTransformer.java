@@ -3,13 +3,16 @@ package com.example.microserviceAuthentification.security.transformers;
 import com.example.microserviceAuthentification.security.entities.User;
 import com.example.microserviceAuthentification.security.entitiesDto.UserDto;
 
+import java.util.*;
+import java.util.stream.Collectors;
+
 public class UserTransformer {
     public static UserDto entityToDto(User user){
         UserDto userDto = new UserDto();
 
         userDto.setId(user.getId());
         userDto.setEmail(user.getEmail());
-        userDto.setUsername(user.getUsername());
+        userDto.setUsername(user.getUserName());
         userDto.setPassword(user.getPassword());
 
         return userDto;
@@ -20,9 +23,22 @@ public class UserTransformer {
 
         user.setId(userDto.getId());
         user.setEmail(userDto.getEmail());
-        user.setUsername(userDto.getUsername());
+        user.setUserName(userDto.getUsername());
         user.setPassword(userDto.getPassword());
 
         return user;
     }
+
+    public static List<UserDto> entityToDtoList(List<User> users){
+        return users.stream()
+                .map(UserTransformer::entityToDto)
+                .collect(Collectors.toList());
+    }
+
+    public static List<User> dtoToEntityList(List<UserDto> userDtos){
+        return userDtos.stream()
+                .map(UserTransformer::dtoToEntity)
+                .collect(Collectors.toList());
+    }
+
 }
