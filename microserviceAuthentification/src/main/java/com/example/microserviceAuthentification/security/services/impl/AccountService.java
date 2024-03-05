@@ -9,6 +9,7 @@ import com.example.microserviceAuthentification.security.repositories.IUserRepos
 import com.example.microserviceAuthentification.security.transformers.RoleTransformer;
 import com.example.microserviceAuthentification.security.transformers.UserTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -19,6 +20,8 @@ public class AccountService {
     private IUserRepository userRepository;
     @Autowired
     private IRoleRepository roleRepository;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public List<UserDto> getAllUser(){
         List<User> users = userRepository.findAll();
@@ -32,6 +35,8 @@ public class AccountService {
 
     public UserDto addNewUser(UserDto userDto){
         User createUser = UserTransformer.dtoToEntity(userDto);
+        String password = createUser.getPassword();
+        createUser.setPassword(passwordEncoder.encode(password));
         userRepository.save(createUser);
         return UserTransformer.entityToDto(createUser);
     }
