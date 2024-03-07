@@ -1,6 +1,5 @@
 package com.example.microserviceAuthentification.security.controllers;
 
-import com.example.microserviceAuthentification.security.entitiesDto.RoleDto;
 import com.example.microserviceAuthentification.security.entitiesDto.UserDto;
 import com.example.microserviceAuthentification.security.services.impl.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +19,6 @@ public class AccountController {
         List<UserDto> userDtos = accountService.getAllUser();
         return new ResponseEntity<>(userDtos, HttpStatus.OK);
     }
-    @GetMapping("/roles")
-    public ResponseEntity<List<RoleDto>> getAllRole(){
-        List<RoleDto> roleDtos = accountService.getAllRole();
-        return new ResponseEntity<>(roleDtos, HttpStatus.OK);
-    }
     @GetMapping("/by-user-name/{userName}")
     public ResponseEntity<UserDto> getUserByUserName(@PathVariable String userName){
         UserDto userDto = accountService.getByUserName(userName);
@@ -40,14 +34,5 @@ public class AccountController {
         UserDto createUserDto = accountService.addNewUser(userDto);
         return new ResponseEntity<>(createUserDto,HttpStatus.CREATED);
     }
-    @PostMapping("/save-role")
-    public ResponseEntity<RoleDto> createRole(@RequestBody RoleDto roleDto){
-        RoleDto createRoleDto = accountService.addNewRole(roleDto);
-        return new ResponseEntity<>(createRoleDto,HttpStatus.CREATED);
-    }
-    @PostMapping("{role}/to/{user}")
-    public ResponseEntity<Void> addRoleToUser(@PathVariable String userName,@PathVariable String roleName){
-        accountService.addRoleToUser(userName,roleName);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
+
 }
