@@ -15,21 +15,21 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig{
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-                http
-                        .csrf(csrf -> csrf
+                http.csrf(csrf -> csrf
                                 .disable() // Désactiver CSRF
                         )
                         .authorizeHttpRequests(authorize -> authorize
 //                        .requestMatchers("/api/**").permitAll()
 //                        .requestMatchers(HttpMethod.POST, "/save-users").permitAll()
-                            .anyRequest().permitAll()
-                            )
+                                        .anyRequest().permitAll()
+                        )
                         .formLogin(formLogin -> formLogin
-                            .loginPage("/login")
-                            .permitAll()
+                                .loginPage("/login")
+                                .permitAll()
                         )
 
                         .rememberMe(Customizer.withDefaults());
+
 
         return http.build();
     }

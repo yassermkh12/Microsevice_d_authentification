@@ -12,7 +12,7 @@ public class UserTransformer {
 
         userDto.setId(user.getId());
         userDto.setEmail(user.getEmail());
-        userDto.setUsername(user.getUserName());
+        userDto.setUsername(user.getUsername());
         userDto.setPassword(user.getPassword());
 
         return userDto;
