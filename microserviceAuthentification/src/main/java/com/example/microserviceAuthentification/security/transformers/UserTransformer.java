@@ -14,6 +14,7 @@ public class UserTransformer {
         userDto.setEmail(user.getEmail());
         userDto.setUsername(user.getUsername());
         userDto.setPassword(user.getPassword());
+        userDto.setRole(user.getRole());
 
         return userDto;
     }
@@ -25,6 +26,7 @@ public class UserTransformer {
         user.setEmail(userDto.getEmail());
         user.setUserName(userDto.getUsername());
         user.setPassword(userDto.getPassword());
+        user.setRole(userDto.getRole());
 
         return user;
     }
