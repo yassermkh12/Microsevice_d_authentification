@@ -15,7 +15,7 @@ import java.util.Map;
 @Slf4j
 @Service
 public class JwtService {
-    private final String secretKey = "yasser";
+    public SecretKey secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
     public String generateJwtToken(String userDetails){
         //gestion des dates
@@ -26,10 +26,7 @@ public class JwtService {
         Date dateExpiration = new Date(now.getTime() + longueurExpiration);
         log.info("la date de fin du token : "+ dateExpiration);
 
-        SecretKey secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS256);
-
         Map<String, Object> claims = new HashMap<>();
-
 
         String token = Jwts.builder()
                 .setClaims(claims)
@@ -45,16 +42,56 @@ public class JwtService {
 
     }
 
-//    private Claims extractAllClaims(String token){
-//        return Jwts
-//                .parser()
-//                .setSigningKey("mySecret")
-//                .build()
-//                .parseClaimsJws(token)
-//                .getBody();
-//    }
 
-//    private Key getSignInKey(){
-//
-//    }
+    private Claims extractAllClaims(String token){
+        return Jwts
+                .parser()
+                .setSigningKey(secretKey)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+    }
+
+    public String extractUsername(String token){
+
+        log.info("extraction du user depuis le token commence");
+        Claims claims = Jwts
+                .parser()
+                .setSigningKey(secretKey)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+        log.info("les claims sont : "+ claims);
+
+        String username = claims.getSubject();
+        log.info("le username depuis le token est : "+ username);
+
+        return username;
+    }
+
+    public boolean isTokenValid(String token, String username){
+        log.info("la validation du token commence depuis le service");
+        String usernameToken = extractUsername(token);
+        log.info("username dans le token : "+ usernameToken);
+        log.info("username : "+ username);
+        return (usernameToken.equals(username) && !isTokenExpired(token));
+    }
+
+    public boolean isTokenExpired(String token){
+        log.info("l expiration du token");
+        return extractExpiration(token).before(new Date());
+    }
+
+    public Date extractExpiration(String token){
+        Claims claims = Jwts
+                .parser()
+                .setSigningKey(secretKey)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+
+        Date expirationToken = claims.getExpiration();
+
+        return expirationToken;
+    }
 }
