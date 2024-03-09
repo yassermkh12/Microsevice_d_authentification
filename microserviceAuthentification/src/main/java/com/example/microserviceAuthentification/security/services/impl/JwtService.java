@@ -69,5 +69,29 @@ public class JwtService {
         return username;
     }
 
+    public boolean isTokenValid(String token, String username){
+        log.info("la validation du token commence depuis le service");
+        String usernameToken = extractUsername(token);
+        log.info("username dans le token : "+ usernameToken);
+        log.info("username : "+ username);
+        return (usernameToken.equals(username) && !isTokenExpired(token));
+    }
 
+    public boolean isTokenExpired(String token){
+        log.info("l expiration du token");
+        return extractExpiration(token).before(new Date());
+    }
+
+    public Date extractExpiration(String token){
+        Claims claims = Jwts
+                .parser()
+                .setSigningKey(secretKey)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+
+        Date expirationToken = claims.getExpiration();
+
+        return expirationToken;
+    }
 }

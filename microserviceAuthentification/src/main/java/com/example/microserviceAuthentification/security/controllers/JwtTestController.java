@@ -24,4 +24,10 @@ public class JwtTestController {
         String username = jwtService.extractUsername(token);
         return new ResponseEntity<>(username,HttpStatus.OK);
     }
+    //validation du token
+    @GetMapping("/validationToken/{token}/{username}")
+    public ResponseEntity<Void> validationToken(@PathVariable String token,@PathVariable String username){
+        jwtService.isTokenValid(token,username);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
