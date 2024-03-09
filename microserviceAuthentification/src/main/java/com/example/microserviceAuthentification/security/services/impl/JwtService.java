@@ -5,6 +5,9 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
@@ -15,9 +18,11 @@ import java.util.Map;
 @Slf4j
 @Service
 public class JwtService {
+    @Autowired
+    private UserDetailsService userDetails;
     public SecretKey secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
-    public String generateJwtToken(String userDetails){
+    public String generateJwtToken(UserDetails userDetails){
         //gestion des dates
         log.info("la generation du token commence");
         Date now = new Date();
@@ -30,7 +35,7 @@ public class JwtService {
 
         String token = Jwts.builder()
                 .setClaims(claims)
-                .setSubject(userDetails)
+                .setSubject(userDetails.getUsername())
                 .setIssuedAt(now)
                 .setExpiration(dateExpiration)
                 .signWith(SignatureAlgorithm.HS256,secretKey)
@@ -39,7 +44,6 @@ public class JwtService {
         log.info("voici le token : "+ token);
 
         return token;
-
     }
 
 
@@ -69,12 +73,12 @@ public class JwtService {
         return username;
     }
 
-    public boolean isTokenValid(String token, String username){
+    public boolean isTokenValid(String token, UserDetails userDetails){
         log.info("la validation du token commence depuis le service");
         String usernameToken = extractUsername(token);
         log.info("username dans le token : "+ usernameToken);
-        log.info("username : "+ username);
-        return (usernameToken.equals(username) && !isTokenExpired(token));
+        log.info("username dans l userDetails : "+ userDetails.getUsername());
+        return (usernameToken.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 
     public boolean isTokenExpired(String token){
