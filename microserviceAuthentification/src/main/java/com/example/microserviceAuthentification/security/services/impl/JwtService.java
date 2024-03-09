@@ -3,9 +3,11 @@ package com.example.microserviceAuthentification.security.services.impl;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import javax.crypto.SecretKey;
 import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
@@ -23,6 +25,8 @@ public class JwtService {
         long longueurExpiration = 3600000;
         Date dateExpiration = new Date(now.getTime() + longueurExpiration);
         log.info("la date de fin du token : "+ dateExpiration);
+
+        SecretKey secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
         Map<String, Object> claims = new HashMap<>();
 
