@@ -35,7 +35,8 @@ public class AuthenticationService {
         userRepository.save(user);
 
         var jwtToken =  jwtService.generateJwtToken(user);
-        AuthenticationResponse authenticationResponse = new AuthenticationResponse(jwtToken);
+        AuthenticationResponse authenticationResponse = new AuthenticationResponse();
+        authenticationResponse.setToken(jwtToken);
 
         log.info("authentication reponse est : "+ authenticationResponse);
 
@@ -55,8 +56,11 @@ public class AuthenticationService {
         User user = userRepository.findByUserName(authenticationRequest.getUsername());
 
 
-        var jwtToken =  jwtService.generateJwtToken(user);
-        AuthenticationResponse authenticationResponse = new AuthenticationResponse(jwtToken);
+        String jwtToken =  jwtService.generateJwtToken(user);
+
+        String jwtRefraicheToken = jwtService.generateRefrechTokenFromToken(jwtToken);
+
+        AuthenticationResponse authenticationResponse = new AuthenticationResponse(jwtToken, jwtRefraicheToken);
 
         return authenticationResponse;
     }

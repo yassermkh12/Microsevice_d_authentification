@@ -27,6 +27,30 @@ public class JwtService {
         log.info("la generation du token commence");
         Date now = new Date();
         log.info("voici la date du commencement du token : "+ now);
+        long longueurExpiration = 360000;
+        Date dateExpiration = new Date(now.getTime() + longueurExpiration);
+        log.info("la date de fin du token : "+ dateExpiration);
+
+        Map<String, Object> claims = new HashMap<>();
+
+        String token = Jwts.builder()
+                .setClaims(claims)
+                .setSubject(userDetails.getUsername())
+                .setIssuedAt(now)
+                .setExpiration(dateExpiration)
+                .signWith(SignatureAlgorithm.HS256,secretKey)
+                .compact();
+
+        log.info("voici le token : "+ token);
+
+        return token;
+    }
+
+    public String generateJwtRefrechToken(UserDetails userDetails){
+        //gestion des dates
+        log.info("la generation du token commence");
+        Date now = new Date();
+        log.info("voici la date du commencement du token : "+ now);
         long longueurExpiration = 3600000;
         Date dateExpiration = new Date(now.getTime() + longueurExpiration);
         log.info("la date de fin du token : "+ dateExpiration);
@@ -46,7 +70,11 @@ public class JwtService {
         return token;
     }
 
+    public String generateRefrechTokenFromToken(String token){
+        String username = extractUsername(token);
 
+        return generateJwtRefrechToken(userDetails.loadUserByUsername(username));
+    }
     private Claims extractAllClaims(String token){
         return Jwts
                 .parser()

@@ -59,6 +59,16 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
 //                log.info("llll" + SecurityContextHolder.getContext().setAuthentication(authenticationToken));
+            }else if (jwtService.isTokenExpired(jwt)){
+                String newJwt = jwtService.generateRefrechTokenFromToken(jwt);
+
+                UsernamePasswordAuthenticationToken authenticationRefrechToken = new UsernamePasswordAuthenticationToken(
+                        userDetails,
+                        null,
+                        userDetails.getAuthorities()
+                );
+
+                SecurityContextHolder.getContext().setAuthentication(authenticationRefrechToken);
             }
         }
         filterChain.doFilter(request,response);
