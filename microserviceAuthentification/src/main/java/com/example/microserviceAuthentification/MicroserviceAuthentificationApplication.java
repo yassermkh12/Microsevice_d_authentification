@@ -12,8 +12,5 @@ public class MicroserviceAuthentificationApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MicroserviceAuthentificationApplication.class, args);
 	}
-	@Bean
-	PasswordEncoder passwordEncoder(){
-		return new BCryptPasswordEncoder();
-	}
+
 }
