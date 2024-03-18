@@ -8204,3 +8204,1264 @@ io.jsonwebtoken.ExpiredJwtException: JWT expired 11314 milliseconds ago at 2024-
 22:48:53.533 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 22:48:53.536 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 22:48:53.551 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+11:26:05.236 [main] INFO  c.e.m.MicroserviceAuthentificationApplication - Starting MicroserviceAuthentificationApplication using Java 17.0.8.1 with PID 16016 (C:\Users\mokht\Desktop\programmes\java_Springboot\microserviceAuthentification\microserviceAuthentification\target\classes started by mokht in C:\Users\mokht\Desktop\programmes\java_Springboot\microserviceAuthentification\microserviceAuthentification)
+11:26:05.261 [main] INFO  c.e.m.MicroserviceAuthentificationApplication - No active profile set, falling back to 1 default profile: "default"
+11:26:11.024 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+11:26:11.284 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 200 ms. Found 1 JPA repository interface.
+11:26:13.969 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+11:26:14.008 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+11:26:14.047 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:26:14.047 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+11:26:14.245 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:26:14.247 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 8746 ms
+11:26:15.600 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11:26:15.874 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+11:26:16.301 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+11:26:17.382 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+11:26:17.550 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11:26:18.797 [main] ERROR com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Exception during pool initialization.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:438)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:189)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:428)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:276)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:388)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:364)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:685)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1685)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1434)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:907)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:785)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1419)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1419)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:210)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:173)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:168)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:153)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4866)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:845)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:240)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:921)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:126)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:105)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:499)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:218)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.example.microserviceAuthentification.MicroserviceAuthentificationApplication.main(MicroserviceAuthentificationApplication.java:13)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:104)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:149)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:165)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:88)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:935)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:805)
+	... 157 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:62)
+	... 160 common frames omitted
+11:26:18.854 [main] WARN  o.h.e.j.e.i.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata
+java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:276)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:107)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1432)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1503)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:388)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:364)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:685)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1685)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1434)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:907)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:785)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1419)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1419)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:210)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:173)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:168)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:153)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4866)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:845)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:240)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:921)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:126)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:105)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:499)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:218)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.example.microserviceAuthentification.MicroserviceAuthentificationApplication.main(MicroserviceAuthentificationApplication.java:13)
+11:26:19.038 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+11:26:22.185 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+11:26:22.231 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11:26:23.244 [main] ERROR com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Exception during pool initialization.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:438)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:189)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:428)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:39)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:63)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcDatabaseMetaData(ImprovedExtractionContextImpl.java:70)
+	at org.hibernate.tool.schema.extract.internal.InformationExtractorJdbcDatabaseMetaDataImpl.processTableResultSet(InformationExtractorJdbcDatabaseMetaDataImpl.java:64)
+	at org.hibernate.tool.schema.extract.internal.AbstractInformationExtractorImpl.getTables(AbstractInformationExtractorImpl.java:570)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.getTablesInformation(DatabaseInformationImpl.java:122)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:72)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:232)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:117)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:286)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:145)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:450)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1507)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:388)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:364)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:685)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1685)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1434)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:907)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:785)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1419)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1419)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:210)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:173)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:168)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:153)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4866)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:845)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:240)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:921)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:126)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:105)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:499)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:218)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.example.microserviceAuthentification.MicroserviceAuthentificationApplication.main(MicroserviceAuthentificationApplication.java:13)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:104)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:149)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:165)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:88)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:935)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:805)
+	... 162 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:62)
+	... 165 common frames omitted
+11:26:23.251 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08S01
+11:26:23.253 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+11:26:23.306 [main] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.] [n/a]
+11:26:23.311 [main] ERROR o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthenticationFilter': Unsatisfied dependency expressed through field 'jwtService': Error creating bean with name 'jwtService': Unsatisfied dependency expressed through field 'userDetails': Error creating bean with name 'userDetailsServiceConfig' defined in file [C:\Users\mokht\Desktop\programmes\java_Springboot\microserviceAuthentification\microserviceAuthentification\target\classes\com\example\microserviceAuthentification\security\securityConfig\UserDetailsServiceConfig.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'IUserRepository' defined in com.example.microserviceAuthentification.security.repositories.IUserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+11:26:23.433 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+11:26:23.513 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+11:26:23.552 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+11:26:23.670 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:618)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.example.microserviceAuthentification.MicroserviceAuthentificationApplication.main(MicroserviceAuthentificationApplication.java:13)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:145)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:105)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:499)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:218)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:188)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthenticationFilter': Unsatisfied dependency expressed through field 'jwtService': Error creating bean with name 'jwtService': Unsatisfied dependency expressed through field 'userDetails': Error creating bean with name 'userDetailsServiceConfig' defined in file [C:\Users\mokht\Desktop\programmes\java_Springboot\microserviceAuthentification\microserviceAuthentification\target\classes\com\example\microserviceAuthentification\security\securityConfig\UserDetailsServiceConfig.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'IUserRepository' defined in com.example.microserviceAuthentification.security.repositories.IUserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1419)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:210)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:173)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:168)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:153)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:266)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:240)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:52)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4866)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:845)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:240)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:921)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:437)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:126)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtService': Unsatisfied dependency expressed through field 'userDetails': Error creating bean with name 'userDetailsServiceConfig' defined in file [C:\Users\mokht\Desktop\programmes\java_Springboot\microserviceAuthentification\microserviceAuthentification\target\classes\com\example\microserviceAuthentification\security\securityConfig\UserDetailsServiceConfig.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'IUserRepository' defined in com.example.microserviceAuthentification.security.repositories.IUserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:787)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1419)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	... 55 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userDetailsServiceConfig' defined in file [C:\Users\mokht\Desktop\programmes\java_Springboot\microserviceAuthentification\microserviceAuthentification\target\classes\com\example\microserviceAuthentification\security\securityConfig\UserDetailsServiceConfig.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'IUserRepository' defined in com.example.microserviceAuthentification.security.repositories.IUserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1355)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	... 69 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'IUserRepository' defined in com.example.microserviceAuthentification.security.repositories.IUserRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1685)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1434)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:907)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:785)
+	... 91 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:685)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 105 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.] [n/a]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1786)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365)
+	... 117 common frames omitted
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.] [n/a]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:364)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1833)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	... 124 common frames omitted
+Caused by: org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:100)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:74)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:39)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:63)
+	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcDatabaseMetaData(ImprovedExtractionContextImpl.java:70)
+	at org.hibernate.tool.schema.extract.internal.InformationExtractorJdbcDatabaseMetaDataImpl.processTableResultSet(InformationExtractorJdbcDatabaseMetaDataImpl.java:64)
+	at org.hibernate.tool.schema.extract.internal.AbstractInformationExtractorImpl.getTables(AbstractInformationExtractorImpl.java:570)
+	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.getTablesInformation(DatabaseInformationImpl.java:122)
+	at org.hibernate.tool.schema.internal.GroupedSchemaMigratorImpl.performTablesMigration(GroupedSchemaMigratorImpl.java:72)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:232)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:117)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:286)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:145)
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:142)
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37)
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:315)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:450)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1507)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:388)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	... 128 common frames omitted
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815)
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:438)
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:241)
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:189)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:428)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46)
+	... 149 common frames omitted
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:104)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:149)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:165)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:88)
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:120)
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:935)
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:805)
+	... 162 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153)
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:62)
+	... 165 common frames omitted
+11:28:06.190 [main] INFO  c.e.m.MicroserviceAuthentificationApplication - Starting MicroserviceAuthentificationApplication using Java 17.0.8.1 with PID 7220 (C:\Users\mokht\Desktop\programmes\java_Springboot\microserviceAuthentification\microserviceAuthentification\target\classes started by mokht in C:\Users\mokht\Desktop\programmes\java_Springboot\microserviceAuthentification\microserviceAuthentification)
+11:28:06.196 [main] INFO  c.e.m.MicroserviceAuthentificationApplication - No active profile set, falling back to 1 default profile: "default"
+11:28:08.099 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+11:28:08.262 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 139 ms. Found 1 JPA repository interface.
+11:28:09.789 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+11:28:09.827 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+11:28:09.833 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:28:09.833 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+11:28:09.999 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:28:10.005 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3601 ms
+11:28:10.489 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+11:28:10.630 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+11:28:10.743 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+11:28:11.315 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+11:28:11.377 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+11:28:12.087 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@58e03769
+11:28:12.090 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+11:28:12.204 [main] WARN  org.hibernate.dialect.Dialect - HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+11:28:12.236 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+11:28:14.067 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+11:28:14.261 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+11:28:15.440 [main] INFO  c.e.m.s.s.UserDetailsServiceConfig - **************************** user details service ************************
+11:28:15.935 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+11:28:16.896 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@325236f5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@32eb38e5, org.springframework.security.web.context.SecurityContextHolderFilter@2487b621, org.springframework.security.web.header.HeaderWriterFilter@8eeb4c5, org.springframework.web.filter.CorsFilter@73633230, org.springframework.security.web.authentication.logout.LogoutFilter@1728d307, com.example.microserviceAuthentification.security.filters.JwtAuthenticationFilter@2119b989, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@736a8aea, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@504b4a97, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@21539796, org.springframework.security.web.session.SessionManagementFilter@2d568cff, org.springframework.security.web.access.ExceptionTranslationFilter@2267b0bb, org.springframework.security.web.access.intercept.AuthorizationFilter@1372696b]
+11:28:17.597 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+11:28:17.674 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+11:28:17.693 [main] INFO  c.e.m.MicroserviceAuthentificationApplication - Started MicroserviceAuthentificationApplication in 12.269 seconds (process running for 13.511)
+11:33:04.702 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+11:33:04.703 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+11:33:04.706 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+11:33:04.888 [http-nio-8080-exec-2] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+11:33:04.890 [http-nio-8080-exec-2] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+11:33:05.318 [http-nio-8080-exec-2] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+11:33:06.178 [http-nio-8080-exec-3] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+11:33:06.178 [http-nio-8080-exec-3] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+11:33:06.181 [http-nio-8080-exec-3] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+11:33:06.386 [http-nio-8080-exec-4] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+11:33:06.386 [http-nio-8080-exec-4] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+11:33:06.389 [http-nio-8080-exec-4] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+11:33:42.573 [http-nio-8080-exec-8] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+11:33:42.574 [http-nio-8080-exec-8] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+11:34:53.202 [http-nio-8080-exec-1] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+11:34:53.202 [http-nio-8080-exec-1] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+11:34:53.205 [http-nio-8080-exec-1] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+11:34:53.281 [http-nio-8080-exec-1] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+11:34:55.578 [http-nio-8080-exec-4] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+11:34:55.578 [http-nio-8080-exec-4] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+11:34:55.580 [http-nio-8080-exec-4] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+11:34:55.584 [http-nio-8080-exec-4] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+11:35:06.947 [http-nio-8080-exec-2] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+11:35:06.947 [http-nio-8080-exec-2] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+11:35:06.967 [http-nio-8080-exec-2] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+11:35:07.112 [http-nio-8080-exec-2] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+11:35:07.134 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+11:35:07.135 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 11:35:07 WET 2024
+11:35:07.135 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 11:41:07 WET 2024
+11:35:07.378 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2MTcwNywiZXhwIjoxNzEwNzYyMDY3fQ.mztz5OBI2Lgs3wZyUkwQ97acDkK8JJ1NjfgukCEp_Eg
+11:35:07.378 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+11:35:07.492 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710761707, exp=1710762067}
+11:35:07.492 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+11:35:07.497 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+11:35:07.498 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 11:35:07 WET 2024
+11:35:07.498 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 12:35:07 WET 2024
+11:35:07.499 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2MTcwNywiZXhwIjoxNzEwNzY1MzA3fQ.0RHJZmEtXEedYbR2lNN93xGTEgpe3Th1blfhROYxHbc
+11:35:10.963 [http-nio-8080-exec-5] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+11:35:10.963 [http-nio-8080-exec-5] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+11:35:10.965 [http-nio-8080-exec-5] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+11:35:11.085 [http-nio-8080-exec-5] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+11:35:11.090 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+11:35:11.090 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 11:35:11 WET 2024
+11:35:11.090 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 11:41:11 WET 2024
+11:35:11.091 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2MTcxMSwiZXhwIjoxNzEwNzYyMDcxfQ.5MegTk2bkbKi0Hz_78XVi7bGkbfrCDMog61oDmEHhrQ
+11:35:11.092 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+11:35:11.093 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710761711, exp=1710762071}
+11:35:11.094 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+11:35:11.097 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+11:35:11.098 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 11:35:11 WET 2024
+11:35:11.098 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 12:35:11 WET 2024
+11:35:11.099 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2MTcxMSwiZXhwIjoxNzEwNzY1MzExfQ.GC_K74Mj10HrdocwoM9nuPoJWKmFH-6CWTfT4t5EQLo
+11:38:03.984 [http-nio-8080-exec-8] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+11:38:03.985 [http-nio-8080-exec-8] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+11:38:03.988 [http-nio-8080-exec-8] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+11:38:04.110 [http-nio-8080-exec-8] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+11:38:04.114 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+11:38:04.115 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 11:38:04 WET 2024
+11:38:04.115 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 11:44:04 WET 2024
+11:38:04.116 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2MTg4NCwiZXhwIjoxNzEwNzYyMjQ0fQ.SLP0mmxvmh5EPGAmPIJ2KGaLcqkCw10iZJLvFSubk0A
+11:38:04.117 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+11:38:04.119 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710761884, exp=1710762244}
+11:38:04.119 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+11:38:04.123 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+11:38:04.124 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 11:38:04 WET 2024
+11:38:04.124 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 12:38:04 WET 2024
+11:38:04.125 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2MTg4NCwiZXhwIjoxNzEwNzY1NDg0fQ.h8xgxQsobjTH_By5T4Gbsa3u4HUMTr4N6tArBUPc6iM
+11:38:44.759 [http-nio-8080-exec-9] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+11:38:44.759 [http-nio-8080-exec-9] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+11:38:44.762 [http-nio-8080-exec-9] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+11:38:44.857 [http-nio-8080-exec-9] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+11:38:44.860 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+11:38:44.860 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 11:38:44 WET 2024
+11:38:44.860 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 11:44:44 WET 2024
+11:38:44.861 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2MTkyNCwiZXhwIjoxNzEwNzYyMjg0fQ.IRXc2IttqmffElEy0fKqgxSL5zR1qMvPu7ME3H0CRYw
+11:38:44.861 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+11:38:44.862 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710761924, exp=1710762284}
+11:38:44.862 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+11:38:44.864 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+11:38:44.865 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 11:38:44 WET 2024
+11:38:44.865 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 12:38:44 WET 2024
+11:38:44.865 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2MTkyNCwiZXhwIjoxNzEwNzY1NTI0fQ.HaD2-zUvM-1aLSVJEk3lSkesa6fuXZXD0enaG7io0IM
+11:46:11.540 [http-nio-8080-exec-4] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+11:46:11.540 [http-nio-8080-exec-4] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+11:46:11.543 [http-nio-8080-exec-4] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+11:46:11.660 [http-nio-8080-exec-4] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+11:46:11.664 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+11:46:11.664 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 11:46:11 WET 2024
+11:46:11.664 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 11:52:11 WET 2024
+11:46:11.665 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2MjM3MSwiZXhwIjoxNzEwNzYyNzMxfQ.vTTW0prx6f5t9qlpji2TqEjDkhaGOyqLk4aafitIc6M
+11:46:11.666 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+11:46:11.667 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710762371, exp=1710762731}
+11:46:11.668 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+11:46:11.672 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+11:46:11.672 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 11:46:11 WET 2024
+11:46:11.673 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 12:46:11 WET 2024
+11:46:11.674 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2MjM3MSwiZXhwIjoxNzEwNzY1OTcxfQ.stcoAG9eLi3t-wWT0zTJMuoyh57HmtZpXVFZ_gN_Ei0
+11:46:12.829 [http-nio-8080-exec-2] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+11:46:12.829 [http-nio-8080-exec-2] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+11:46:12.831 [http-nio-8080-exec-2] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+11:46:12.956 [http-nio-8080-exec-2] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+11:46:12.960 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+11:46:12.961 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 11:46:12 WET 2024
+11:46:12.961 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 11:52:12 WET 2024
+11:46:12.963 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2MjM3MiwiZXhwIjoxNzEwNzYyNzMyfQ.0n9305wh77Z99EYhcOcFPrDLet6mDNPBqnQSGkkAY0g
+11:46:12.963 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+11:46:12.964 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710762372, exp=1710762732}
+11:46:12.965 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+11:46:12.968 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+11:46:12.969 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 11:46:12 WET 2024
+11:46:12.969 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 12:46:12 WET 2024
+11:46:12.970 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2MjM3MiwiZXhwIjoxNzEwNzY1OTcyfQ.j_3Z4rL7D942TeZh4Xvd8XtW3554RV5V8VezacdENVU
+11:46:36.921 [http-nio-8080-exec-5] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+11:46:36.921 [http-nio-8080-exec-5] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+11:46:36.923 [http-nio-8080-exec-5] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+11:46:37.048 [http-nio-8080-exec-5] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+11:46:37.052 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+11:46:37.053 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 11:46:37 WET 2024
+11:46:37.053 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 11:52:37 WET 2024
+11:46:37.054 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2MjM5NywiZXhwIjoxNzEwNzYyNzU3fQ.9xBVNz_iIiC0N8wJ4Yrff1f4lO39ddnLe0lYpfGdEIY
+11:46:37.054 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+11:46:37.055 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710762397, exp=1710762757}
+11:46:37.056 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+11:46:37.059 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+11:46:37.060 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 11:46:37 WET 2024
+11:46:37.060 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 12:46:37 WET 2024
+11:46:37.061 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2MjM5NywiZXhwIjoxNzEwNzY1OTk3fQ.kibD_9um60UBl8GwWTby9Xsb-CxbY8tmZ2lW2X5-Gc0
+11:46:51.388 [http-nio-8080-exec-8] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+11:46:51.389 [http-nio-8080-exec-8] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+11:46:51.391 [http-nio-8080-exec-8] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+11:46:51.581 [http-nio-8080-exec-8] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+11:46:51.589 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+11:46:51.589 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 11:46:51 WET 2024
+11:46:51.589 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 11:52:51 WET 2024
+11:46:51.592 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2MjQxMSwiZXhwIjoxNzEwNzYyNzcxfQ.lh8pmPTPvxHJHWqyjRywbCWqKBhNqQnOQcE08iN7yFQ
+11:46:51.592 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+11:46:51.594 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710762411, exp=1710762771}
+11:46:51.594 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+11:46:51.599 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+11:46:51.600 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 11:46:51 WET 2024
+11:46:51.600 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 12:46:51 WET 2024
+11:46:51.602 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2MjQxMSwiZXhwIjoxNzEwNzY2MDExfQ.a4PUjGEONqOZxDCE5z5C5s2FvHNn7afZqKZlmzNMyDw
+11:49:51.654 [http-nio-8080-exec-9] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+11:49:51.655 [http-nio-8080-exec-9] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+11:49:51.657 [http-nio-8080-exec-9] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+11:49:51.767 [http-nio-8080-exec-9] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+11:49:51.771 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+11:49:51.771 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 11:49:51 WET 2024
+11:49:51.771 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 11:55:51 WET 2024
+11:49:51.772 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2MjU5MSwiZXhwIjoxNzEwNzYyOTUxfQ.SUzO_nUsPNxGekrMpMrFwlCBKMZwIEuOkqyp-XFjNpc
+11:49:51.772 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+11:49:51.773 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710762591, exp=1710762951}
+11:49:51.773 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+11:49:51.776 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+11:49:51.776 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 11:49:51 WET 2024
+11:49:51.776 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 12:49:51 WET 2024
+11:49:51.777 [http-nio-8080-exec-9] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2MjU5MSwiZXhwIjoxNzEwNzY2MTkxfQ.3NyLGt5bRG0wdURzowydKcrTn0TWdQXKOsbPp3YPXGU
+12:19:37.482 [http-nio-8080-exec-3] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+12:19:37.510 [http-nio-8080-exec-3] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+12:19:37.512 [http-nio-8080-exec-3] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+12:19:37.517 [http-nio-8080-exec-3] WARN  o.s.s.c.bcrypt.BCryptPasswordEncoder - Encoded password does not look like BCrypt
+12:19:41.053 [http-nio-8080-exec-2] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+12:19:41.054 [http-nio-8080-exec-2] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+12:19:41.057 [http-nio-8080-exec-2] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+12:19:41.155 [http-nio-8080-exec-2] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+12:19:41.158 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+12:19:41.158 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 12:19:41 WET 2024
+12:19:41.158 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 12:25:41 WET 2024
+12:19:41.160 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2NDM4MSwiZXhwIjoxNzEwNzY0NzQxfQ.IXgo_2b6KIzdWs3fkJRqnREFJAiu7tayst7MTPUu2fo
+12:19:41.160 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+12:19:41.161 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710764381, exp=1710764741}
+12:19:41.161 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+12:19:41.164 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+12:19:41.164 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 12:19:41 WET 2024
+12:19:41.164 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 13:19:41 WET 2024
+12:19:41.165 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc2NDM4MSwiZXhwIjoxNzEwNzY3OTgxfQ.5oX8X7XiTPLQkXyyNKz01AtXErAK45Htrj7lCYkbWP4
+12:22:32.641 [http-nio-8080-exec-5] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+12:22:32.642 [http-nio-8080-exec-5] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+12:22:32.645 [http-nio-8080-exec-5] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+12:46:37.452 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+12:46:37.683 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+12:46:37.800 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:50:26.218 [main] INFO  c.e.m.MicroserviceAuthentificationApplication - Starting MicroserviceAuthentificationApplication using Java 17.0.8.1 with PID 16236 (C:\Users\mokht\Desktop\programmes\java_Springboot\microserviceAuthentification\microserviceAuthentification\target\classes started by mokht in C:\Users\mokht\Desktop\programmes\java_Springboot\microserviceAuthentification\microserviceAuthentification)
+13:50:26.238 [main] INFO  c.e.m.MicroserviceAuthentificationApplication - No active profile set, falling back to 1 default profile: "default"
+13:50:32.296 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:50:32.608 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 233 ms. Found 1 JPA repository interface.
+13:50:35.901 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+13:50:35.950 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+13:50:35.977 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:50:35.978 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+13:50:36.313 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:50:36.317 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 9809 ms
+13:50:37.634 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+13:50:37.962 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+13:50:38.210 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+13:50:39.377 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+13:50:39.582 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:50:40.054 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6bd7439d
+13:50:40.059 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:50:40.475 [main] WARN  org.hibernate.dialect.Dialect - HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+13:50:40.500 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+13:50:43.549 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+13:50:43.725 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:50:45.009 [main] INFO  c.e.m.s.s.UserDetailsServiceConfig - **************************** user details service ************************
+13:50:45.554 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:50:47.825 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@956cf3d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@712213ed, org.springframework.security.web.context.SecurityContextHolderFilter@40b958c5, org.springframework.security.web.header.HeaderWriterFilter@504b4a97, org.springframework.web.filter.CorsFilter@58189132, org.springframework.security.web.authentication.logout.LogoutFilter@34a99d8, com.example.microserviceAuthentification.security.filters.JwtAuthenticationFilter@1701beb3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@74ab8610, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@231c521e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2305aad0, org.springframework.security.web.session.SessionManagementFilter@17554316, org.springframework.security.web.access.ExceptionTranslationFilter@3d2ff73a, org.springframework.security.web.access.intercept.AuthorizationFilter@744199bb]
+13:50:48.824 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+13:50:48.924 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+13:50:48.950 [main] INFO  c.e.m.MicroserviceAuthentificationApplication - Started MicroserviceAuthentificationApplication in 25.239 seconds (process running for 33.885)
+13:56:20.839 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:56:20.839 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+13:56:20.843 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+13:56:21.094 [http-nio-8080-exec-2] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+13:56:21.095 [http-nio-8080-exec-2] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+13:56:21.461 [http-nio-8080-exec-2] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+13:56:23.011 [http-nio-8080-exec-2] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+13:56:23.057 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+13:56:23.058 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 13:56:23 WET 2024
+13:56:23.059 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 14:02:23 WET 2024
+13:56:23.334 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc3MDE4MywiZXhwIjoxNzEwNzcwNTQzfQ.887Fio4LzANG2ZpbOxvY4dd7WDec5hN-L4UNG1B3Y9Q
+13:56:23.335 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+13:56:23.506 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710770183, exp=1710770543}
+13:56:23.506 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+13:56:23.515 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+13:56:23.517 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 13:56:23 WET 2024
+13:56:23.518 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 14:56:23 WET 2024
+13:56:23.519 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc3MDE4MywiZXhwIjoxNzEwNzczNzgzfQ.jeEH5hWDJ6iX3BqeouzkCwqVVFbYX_CIApyGb4s3iZA
+13:58:38.056 [http-nio-8080-exec-4] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+13:58:38.057 [http-nio-8080-exec-4] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+13:58:38.060 [http-nio-8080-exec-4] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+13:58:38.219 [http-nio-8080-exec-4] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+13:58:38.223 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+13:58:38.224 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 13:58:38 WET 2024
+13:58:38.224 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 14:04:38 WET 2024
+13:58:38.225 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc3MDMxOCwiZXhwIjoxNzEwNzcwNjc4fQ.FDLfeATDi8yTrW2DVCyl-PomZefnj4ZpKegQsl1oV7A
+13:58:38.225 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+13:58:38.227 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710770318, exp=1710770678}
+13:58:38.227 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+13:58:38.231 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+13:58:38.232 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 13:58:38 WET 2024
+13:58:38.232 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 14:58:38 WET 2024
+13:58:38.233 [http-nio-8080-exec-4] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc3MDMxOCwiZXhwIjoxNzEwNzczOTE4fQ.8a4yZWKaAGdCWZ1IuVyAyqbaz4VVq90VjDi7cfjWesA
+14:00:11.270 [http-nio-8080-exec-6] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+14:00:11.270 [http-nio-8080-exec-6] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+14:00:11.277 [http-nio-8080-exec-6] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+14:00:11.451 [http-nio-8080-exec-6] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+14:00:11.457 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+14:00:11.457 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 14:00:11 WET 2024
+14:00:11.458 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 14:06:11 WET 2024
+14:00:11.459 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc3MDQxMSwiZXhwIjoxNzEwNzcwNzcxfQ.mqOu_wX0KW-IwLsUNF5Pna59I2dCQ4Aqy8tXHryEr3A
+14:00:11.460 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+14:00:11.470 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710770411, exp=1710770771}
+14:00:11.471 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+14:00:11.476 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+14:00:11.477 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 14:00:11 WET 2024
+14:00:11.477 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 15:00:11 WET 2024
+14:00:11.479 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc3MDQxMSwiZXhwIjoxNzEwNzc0MDExfQ.UN-rqcMqBwr6Kpr5O5UUCO-I444lDLoT3mWScRWo8k0
+14:01:15.485 [http-nio-8080-exec-8] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+14:01:15.485 [http-nio-8080-exec-8] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+14:01:15.488 [http-nio-8080-exec-8] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+14:01:15.643 [http-nio-8080-exec-8] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+14:01:15.646 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+14:01:15.647 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 14:01:15 WET 2024
+14:01:15.647 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 14:07:15 WET 2024
+14:01:15.648 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc3MDQ3NSwiZXhwIjoxNzEwNzcwODM1fQ.AzXcoy3Fc_BkodF_IWZXk7gsUdcbbv8gcSNG-_ZzE6c
+14:01:15.648 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+14:01:15.649 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710770475, exp=1710770835}
+14:01:15.649 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+14:01:15.653 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+14:01:15.653 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 14:01:15 WET 2024
+14:01:15.654 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 15:01:15 WET 2024
+14:01:15.655 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc3MDQ3NSwiZXhwIjoxNzEwNzc0MDc1fQ.ml45oRPsRRTCglb7j5Fv-2cfshJB3zmcYzi7GzvJAnQ
+14:19:51.537 [http-nio-8080-exec-10] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+14:19:51.537 [http-nio-8080-exec-10] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+14:19:51.542 [http-nio-8080-exec-10] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+14:19:51.694 [http-nio-8080-exec-10] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+14:19:51.698 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+14:19:51.698 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 14:19:51 WET 2024
+14:19:51.699 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 14:25:51 WET 2024
+14:19:51.700 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc3MTU5MSwiZXhwIjoxNzEwNzcxOTUxfQ.fmP4TrU48XXMnSXH3BydmfFjl5I4tu4qHXiZU5pgpXk
+14:19:51.700 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+14:19:51.702 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710771591, exp=1710771951}
+14:19:51.702 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+14:19:51.706 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+14:19:51.706 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 14:19:51 WET 2024
+14:19:51.706 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 15:19:51 WET 2024
+14:19:51.707 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc3MTU5MSwiZXhwIjoxNzEwNzc1MTkxfQ.Jys3BZn2vZq2W5LXUJEI6W5u56cXqxtzBE4c7XVIsOQ
+14:20:51.578 [http-nio-8080-exec-2] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+14:20:51.579 [http-nio-8080-exec-2] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+14:20:51.587 [http-nio-8080-exec-2] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+14:20:51.788 [http-nio-8080-exec-2] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+14:20:51.793 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+14:20:51.794 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 14:20:51 WET 2024
+14:20:51.794 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 14:26:51 WET 2024
+14:20:51.796 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc3MTY1MSwiZXhwIjoxNzEwNzcyMDExfQ.-h8cHFrOi-99lKTKxm5fgs8NKMuNffPQDXbInsyAYfI
+14:20:51.797 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+14:20:51.798 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710771651, exp=1710772011}
+14:20:51.799 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+14:20:51.803 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+14:20:51.804 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 14:20:51 WET 2024
+14:20:51.804 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 15:20:51 WET 2024
+14:20:51.805 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc3MTY1MSwiZXhwIjoxNzEwNzc1MjUxfQ.qARKaFnC_FdtsIQz-uhoMh6TCcitkC27VRZFcUR6Rbo
+14:29:23.882 [http-nio-8080-exec-5] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+14:29:23.882 [http-nio-8080-exec-5] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+14:29:23.886 [http-nio-8080-exec-5] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+14:29:24.028 [http-nio-8080-exec-5] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+14:29:24.032 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+14:29:24.032 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 14:29:24 WET 2024
+14:29:24.032 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 14:35:24 WET 2024
+14:29:24.034 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc3MjE2NCwiZXhwIjoxNzEwNzcyNTI0fQ.G3qPOsMuQlXmWFKoXy9hUDnwhpiyojVWmxl-I2wTGNk
+14:29:24.034 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+14:29:24.036 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710772164, exp=1710772524}
+14:29:24.036 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+14:29:24.041 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+14:29:24.041 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 14:29:24 WET 2024
+14:29:24.041 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 15:29:24 WET 2024
+14:29:24.042 [http-nio-8080-exec-5] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDc3MjE2NCwiZXhwIjoxNzEwNzc1NzY0fQ.7zrRge_CXLoXBI1bDUEpSF_KYI5xaDDxAtcZjQ1RcOU
+14:41:46.862 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+14:41:46.891 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:41:46.909 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+23:03:58.724 [main] INFO  c.e.m.MicroserviceAuthentificationApplication - Starting MicroserviceAuthentificationApplication using Java 17.0.8.1 with PID 13732 (C:\Users\mokht\Desktop\programmes\java_Springboot\microserviceAuthentification\microserviceAuthentification\target\classes started by mokht in C:\Users\mokht\Desktop\programmes\java_Springboot\microserviceAuthentification\microserviceAuthentification)
+23:03:58.751 [main] INFO  c.e.m.MicroserviceAuthentificationApplication - No active profile set, falling back to 1 default profile: "default"
+23:04:36.328 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+23:04:36.899 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 382 ms. Found 1 JPA repository interface.
+23:04:56.919 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+23:06:39.469 [main] INFO  c.e.m.MicroserviceAuthentificationApplication - Starting MicroserviceAuthentificationApplication using Java 17.0.8.1 with PID 12792 (C:\Users\mokht\Desktop\programmes\java_Springboot\microserviceAuthentification\microserviceAuthentification\target\classes started by mokht in C:\Users\mokht\Desktop\programmes\java_Springboot\microserviceAuthentification\microserviceAuthentification)
+23:06:39.490 [main] INFO  c.e.m.MicroserviceAuthentificationApplication - No active profile set, falling back to 1 default profile: "default"
+23:06:44.237 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+23:06:44.558 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 287 ms. Found 1 JPA repository interface.
+23:06:47.670 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+23:06:47.718 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+23:06:47.737 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+23:06:47.737 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+23:06:48.064 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+23:06:48.068 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 8218 ms
+23:06:49.818 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+23:06:50.434 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+23:06:50.544 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+23:06:51.669 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+23:06:52.140 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+23:06:54.395 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@12e007be
+23:06:54.399 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+23:06:54.800 [main] WARN  org.hibernate.dialect.Dialect - HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+23:06:54.827 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+23:06:58.000 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+23:06:58.529 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+23:07:00.132 [main] INFO  c.e.m.s.s.UserDetailsServiceConfig - **************************** user details service ************************
+23:07:00.913 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+23:07:02.314 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5039c2cf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@355b4c34, org.springframework.security.web.context.SecurityContextHolderFilter@71e55e48, org.springframework.security.web.header.HeaderWriterFilter@63b2418e, org.springframework.web.filter.CorsFilter@5ca006ac, org.springframework.security.web.authentication.logout.LogoutFilter@74ab8610, com.example.microserviceAuthentification.security.filters.JwtAuthenticationFilter@4880a9d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f01361e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@769a9b7a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@dc3eda6, org.springframework.security.web.session.SessionManagementFilter@51d2d336, org.springframework.security.web.access.ExceptionTranslationFilter@4629dde5, org.springframework.security.web.access.intercept.AuthorizationFilter@6dc7b7f]
+23:07:03.152 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+23:07:03.266 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+23:07:03.294 [main] INFO  c.e.m.MicroserviceAuthentificationApplication - Started MicroserviceAuthentificationApplication in 26.315 seconds (process running for 38.444)
+23:15:12.409 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+23:15:12.410 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+23:15:12.415 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+23:15:12.781 [http-nio-8080-exec-2] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+23:15:12.781 [http-nio-8080-exec-2] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+23:15:13.174 [http-nio-8080-exec-2] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+23:15:13.483 [http-nio-8080-exec-3] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+23:15:13.484 [http-nio-8080-exec-3] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+23:15:13.487 [http-nio-8080-exec-3] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+23:15:15.175 [http-nio-8080-exec-2] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+23:15:15.193 [http-nio-8080-exec-3] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+23:15:15.221 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+23:15:15.222 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 23:15:15 WET 2024
+23:15:15.224 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 23:21:15 WET 2024
+23:15:15.227 [http-nio-8080-exec-3] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+23:15:15.228 [http-nio-8080-exec-3] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 23:15:15 WET 2024
+23:15:15.228 [http-nio-8080-exec-3] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 23:21:15 WET 2024
+23:15:15.780 [http-nio-8080-exec-3] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDgwMzcxNSwiZXhwIjoxNzEwODA0MDc1fQ.PLoAPtGr0KWBkX4QIr40MBzR12Ha5VRv90spx-EKTEM
+23:15:15.780 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDgwMzcxNSwiZXhwIjoxNzEwODA0MDc1fQ.PLoAPtGr0KWBkX4QIr40MBzR12Ha5VRv90spx-EKTEM
+23:15:15.780 [http-nio-8080-exec-3] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+23:15:15.780 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+23:15:15.933 [http-nio-8080-exec-3] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710803715, exp=1710804075}
+23:15:15.933 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710803715, exp=1710804075}
+23:15:15.934 [http-nio-8080-exec-3] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+23:15:15.934 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+23:15:15.940 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+23:15:15.940 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 23:15:15 WET 2024
+23:15:15.941 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Tue Mar 19 00:15:15 WET 2024
+23:15:15.942 [http-nio-8080-exec-2] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDgwMzcxNSwiZXhwIjoxNzEwODA3MzE1fQ.uKOenq4GyAA5s7Wi56KTSYP4VNyLcAsggYqlYS-3tYI
+23:15:15.946 [http-nio-8080-exec-3] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+23:15:15.947 [http-nio-8080-exec-3] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 23:15:15 WET 2024
+23:15:15.947 [http-nio-8080-exec-3] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Tue Mar 19 00:15:15 WET 2024
+23:15:15.948 [http-nio-8080-exec-3] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDgwMzcxNSwiZXhwIjoxNzEwODA3MzE1fQ.uKOenq4GyAA5s7Wi56KTSYP4VNyLcAsggYqlYS-3tYI
+23:15:33.730 [http-nio-8080-exec-6] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+23:15:33.731 [http-nio-8080-exec-6] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+23:15:33.735 [http-nio-8080-exec-6] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+23:15:33.902 [http-nio-8080-exec-6] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+23:15:33.909 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+23:15:33.909 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 23:15:33 WET 2024
+23:15:33.909 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 23:21:33 WET 2024
+23:15:33.911 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDgwMzczMywiZXhwIjoxNzEwODA0MDkzfQ.i7GhBNXXdT_cuhMNEXDmsygJdGwTZg_ScqZZm-izKHk
+23:15:33.911 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+23:15:33.914 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710803733, exp=1710804093}
+23:15:33.914 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+23:15:33.919 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+23:15:33.920 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 23:15:33 WET 2024
+23:15:33.920 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Tue Mar 19 00:15:33 WET 2024
+23:15:33.921 [http-nio-8080-exec-6] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDgwMzczMywiZXhwIjoxNzEwODA3MzMzfQ.V4g7UiDxHknHsqtzwwLOccmPoyO44nLbUFC2VDKzO84
+23:17:28.630 [http-nio-8080-exec-8] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+23:17:28.631 [http-nio-8080-exec-8] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+23:17:28.636 [http-nio-8080-exec-8] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+23:17:28.813 [http-nio-8080-exec-8] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+23:17:28.818 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+23:17:28.818 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 23:17:28 WET 2024
+23:17:28.819 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 23:23:28 WET 2024
+23:17:28.820 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDgwMzg0OCwiZXhwIjoxNzEwODA0MjA4fQ.9u87mf-P2b6nACjAlQth5GN-mkMDNKGbBtQsyvSsQHM
+23:17:28.820 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+23:17:28.822 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710803848, exp=1710804208}
+23:17:28.823 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+23:17:28.827 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+23:17:28.828 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 23:17:28 WET 2024
+23:17:28.828 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Tue Mar 19 00:17:28 WET 2024
+23:17:28.829 [http-nio-8080-exec-8] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDgwMzg0OCwiZXhwIjoxNzEwODA3NDQ4fQ.2Ec7qKYhRyCiBr2BiC8il-R0ME_7r2_H_Cbtn-tZTXk
+23:18:33.329 [http-nio-8080-exec-10] INFO  c.e.m.s.f.JwtAuthenticationFilter - *** le filtre internale commence ***
+23:18:33.330 [http-nio-8080-exec-10] INFO  c.e.m.s.f.JwtAuthenticationFilter - le header d authentification : null
+23:18:33.333 [http-nio-8080-exec-10] INFO  c.e.m.s.s.impl.AuthenticationService - *** le processus d authentification commence ***
+23:18:33.546 [http-nio-8080-exec-10] INFO  c.e.m.s.s.impl.AuthenticationService - UsernamePasswordAuthenticationToken : UsernamePasswordAuthenticationToken [Principal=yassermk, Credentials=[PROTECTED], Authenticated=false, Details=null, Granted Authorities=[]]
+23:18:33.561 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+23:18:33.561 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 23:18:33 WET 2024
+23:18:33.562 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Mon Mar 18 23:24:33 WET 2024
+23:18:33.563 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDgwMzkxMywiZXhwIjoxNzEwODA0MjczfQ.zcSitCCUy6JpRLXFX3RnXkIjOW0wvqiVSq45Ot-penE
+23:18:33.564 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - extraction du user depuis le token commence
+23:18:33.566 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - les claims sont : {sub=yassermk, iat=1710803913, exp=1710804273}
+23:18:33.566 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - le username depuis le token est : yassermk
+23:18:33.571 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - la generation du token commence
+23:18:33.572 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - voici la date du commencement du token : Mon Mar 18 23:18:33 WET 2024
+23:18:33.572 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - la date de fin du token : Tue Mar 19 00:18:33 WET 2024
+23:18:33.574 [http-nio-8080-exec-10] INFO  c.e.m.s.services.impl.JwtService - voici le token : eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5YXNzZXJtayIsImlhdCI6MTcxMDgwMzkxMywiZXhwIjoxNzEwODA3NTEzfQ.t2-7B1azOC9c80xlfOcOgwE7CKF3RXNxx93bpYsFyL0
+23:28:30.567 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+23:28:30.581 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+23:28:30.664 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
