@@ -36,7 +36,7 @@ public class SecurityConfig{
                                 .disable() // Désactiver CSRF
                         )
                         .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers(HttpMethod.POST,"/api/auth/authenticate").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/api/auth/**").permitAll()
 //                        .requestMatchers(HttpMethod.POST, "/save-users").permitAll()
                                         .anyRequest().authenticated()
                         )

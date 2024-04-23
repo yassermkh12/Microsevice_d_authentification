@@ -27,7 +27,7 @@ public class JwtService {
         log.info("la generation du token commence");
         Date now = new Date();
         log.info("voici la date du commencement du token : "+ now);
-        long longueurExpiration = 360000;
+        long longueurExpiration = 36000;
         Date dateExpiration = new Date(now.getTime() + longueurExpiration);
         log.info("la date de fin du token : "+ dateExpiration);
 
