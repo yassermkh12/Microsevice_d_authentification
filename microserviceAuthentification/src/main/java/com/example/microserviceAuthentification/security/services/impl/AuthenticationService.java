@@ -4,15 +4,20 @@ import com.example.microserviceAuthentification.security.authentications.Authent
 import com.example.microserviceAuthentification.security.authentications.AuthenticationResponse;
 import com.example.microserviceAuthentification.security.authentications.ResgisterRequest;
 import com.example.microserviceAuthentification.security.entities.Role;
+import com.example.microserviceAuthentification.security.entities.Roles;
 import com.example.microserviceAuthentification.security.entities.User;
 import com.example.microserviceAuthentification.security.repositories.IUserRepository;
-import lombok.Builder;
 //import lombok.var;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.HashSet;
+import java.util.Set;
+
 @Slf4j
 @Service
 public class AuthenticationService {
@@ -22,21 +27,28 @@ public class AuthenticationService {
     private JwtService jwtService;
     @Autowired
     private AuthenticationManager authenticationManager;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     public AuthenticationResponse register(ResgisterRequest resgisterRequest){
         log.info("*** le processus de REGISTER commence ***");
         User user = new User();
+        Set<Role> roles = new HashSet<>();
+
         user.setUserName(resgisterRequest.getUsername());
-        user.setPassword(resgisterRequest.getPassword());
+        user.setPassword(passwordEncoder.encode(resgisterRequest.getPassword()));
 //        user.setRole(resgisterReques);
-        user.setRole(Role.USER);
+        user.setRoles(user.getRoles());
+
 
         log.info("l utilisateur depuis user : "+ user);
         log.info("l utilisateur depuis registerRequest : "+ resgisterRequest);
         userRepository.save(user);
 
-        var jwtToken =  jwtService.generateJwtToken(user);
+        String jwtToken =  jwtService.generateJwtToken(user);
+//        String jwtRefrecheToken = jwtService.generateRefrechTokenFromToken(jwtToken);
         AuthenticationResponse authenticationResponse = new AuthenticationResponse();
         authenticationResponse.setToken(jwtToken);
+//        authenticationResponse.setRefrechToken(jwtRefrecheToken);
 
         log.info("authentication reponse est : "+ authenticationResponse);
 
@@ -52,15 +64,17 @@ public class AuthenticationService {
                         authenticationRequest.getPassword()
                 )
         );
-        log.info("UsernamePasswordAuthenticationToken : "+ (new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(),authenticationRequest.getPassword())));
+//        log.info("UsernamePasswordAuthenticationToken : "+ (new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(),authenticationRequest.getPassword())));
         User user = userRepository.findByUserName(authenticationRequest.getUsername());
 
 
         String jwtToken =  jwtService.generateJwtToken(user);
 
-        String jwtRefraicheToken = jwtService.generateRefrechTokenFromToken(jwtToken);
+        String jwtRefrecheToken = jwtService.generateRefrechTokenFromToken(jwtToken);
 
-        AuthenticationResponse authenticationResponse = new AuthenticationResponse(jwtToken, jwtRefraicheToken);
+        AuthenticationResponse authenticationResponse = new AuthenticationResponse();
+        authenticationResponse.setToken(jwtToken);
+        authenticationResponse.setRefrechToken(jwtRefrecheToken);
 
         return authenticationResponse;
     }

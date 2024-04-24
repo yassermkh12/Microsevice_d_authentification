@@ -48,12 +48,12 @@ public class JwtService {
 
     public String generateJwtRefrechToken(UserDetails userDetails){
         //gestion des dates
-        log.info("la generation du token commence");
+        log.info("la generation du token refrech commence");
         Date now = new Date();
-        log.info("voici la date du commencement du token : "+ now);
+        log.info("voici la date du commencement du refrech token : "+ now);
         long longueurExpiration = 3600000;
         Date dateExpiration = new Date(now.getTime() + longueurExpiration);
-        log.info("la date de fin du token : "+ dateExpiration);
+        log.info("la date de fin du refrech token : "+ dateExpiration);
 
         Map<String, Object> claims = new HashMap<>();
 
@@ -65,7 +65,7 @@ public class JwtService {
                 .signWith(SignatureAlgorithm.HS256,secretKey)
                 .compact();
 
-        log.info("voici le token : "+ token);
+        log.info("voici le refrech token : "+ token);
 
         return token;
     }

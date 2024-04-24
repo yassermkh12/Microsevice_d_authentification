@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ResgisterRequest {
-    private String email;
     private String username;
     private String password;
 }

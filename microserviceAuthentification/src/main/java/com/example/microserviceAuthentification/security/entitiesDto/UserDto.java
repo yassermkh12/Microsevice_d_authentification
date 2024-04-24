@@ -1,11 +1,12 @@
 package com.example.microserviceAuthentification.security.entitiesDto;
 
 import com.example.microserviceAuthentification.security.entities.Role;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import com.example.microserviceAuthentification.security.entities.Roles;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -15,5 +16,6 @@ public class UserDto {
     private String username;
     private String email;
     private String password;
-    private Role role;
+//    private Roles role;
+    private Set<Role> roles;
 }
