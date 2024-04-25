@@ -31,7 +31,15 @@ public class AuthenticationService {
     private PasswordEncoder passwordEncoder;
     @Autowired
     private IRoleRepository roleRepository;
+
     public AuthenticationResponse register(ResgisterRequest resgisterRequest){
+
+        if (userRepository.findByUserName(resgisterRequest.getUsername()) != null) {
+            log.info("username deja utiliser");
+            AuthenticationResponse authenticationResponse = new AuthenticationResponse();
+            authenticationResponse.setUsernameResponse("username deja utiliser");
+            return authenticationResponse;
+        }else {
         log.info("*** le processus de REGISTER commence ***");
         User user = new User();
         Role role = roleRepository.findById(2L).orElse(null);
@@ -39,7 +47,6 @@ public class AuthenticationService {
         user.setUserName(resgisterRequest.getUsername());
         user.setPassword(passwordEncoder.encode(resgisterRequest.getPassword()));
         user.getRoles().add(role);
-
 
         log.info("l utilisateur depuis user : "+ user);
         log.info("l utilisateur depuis registerRequest : "+ resgisterRequest);
@@ -54,6 +61,7 @@ public class AuthenticationService {
         log.info("authentication reponse est : "+ authenticationResponse);
 
         return authenticationResponse;
+        }
     }
 
     public AuthenticationResponse auhenticate(AuthenticationRequest authenticationRequest){
@@ -65,7 +73,7 @@ public class AuthenticationService {
                         authenticationRequest.getPassword()
                 )
         );
-//        log.info("UsernamePasswordAuthenticationToken : "+ (new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(),authenticationRequest.getPassword())));
+        log.info("UsernamePasswordAuthenticationToken : "+ (new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(),authenticationRequest.getPassword())));
         User user = userRepository.findByUserName(authenticationRequest.getUsername());
 
 
