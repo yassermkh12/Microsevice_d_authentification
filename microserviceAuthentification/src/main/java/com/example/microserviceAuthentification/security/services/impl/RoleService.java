@@ -1,7 +1,9 @@
 package com.example.microserviceAuthentification.security.services.impl;
 
 import com.example.microserviceAuthentification.security.entities.Role;
+import com.example.microserviceAuthentification.security.entitiesDto.RoleDto;
 import com.example.microserviceAuthentification.security.repositories.IRoleRepository;
+import com.example.microserviceAuthentification.security.transformers.RoleTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,16 +15,20 @@ public class RoleService {
     private IRoleRepository roleRepository;
 
 
-    public List<Role> getAllRole(){
-        return roleRepository.findAll();
+    public List<RoleDto> getAllRole(){
+        List<Role> roles = roleRepository.findAll();
+        return RoleTransformer.entityToDtoList(roles);
     }
 
-    public Role getRoleById(Long id){
-        return roleRepository.findById(id).orElse(null);
+    public RoleDto getRoleById(Long id){
+        Role role = roleRepository.findById(id).orElse(null);
+        return RoleTransformer.entityToDto(role);
     }
 
-    public Role addRole(Role role){
-       return roleRepository.save(role);
+    public RoleDto addRole(RoleDto roleDto){
+       Role role = RoleTransformer.dtoToEntity(roleDto);
+       role = roleRepository.save(role);
+       return RoleTransformer.entityToDto(role);
     }
 
     public void deleteRole(Long id){

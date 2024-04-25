@@ -1,6 +1,7 @@
 package com.example.microserviceAuthentification.security.controllers;
 
 import com.example.microserviceAuthentification.security.entities.Role;
+import com.example.microserviceAuthentification.security.entitiesDto.RoleDto;
 import com.example.microserviceAuthentification.security.services.impl.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,18 +17,18 @@ public class RoleController {
     private RoleService roleService;
 
     @GetMapping("/roles")
-    public ResponseEntity<List<Role>> getAllRole(){
-        List<Role> roles = roleService.getAllRole();
-        return new ResponseEntity<>(roles, HttpStatus.OK);
+    public ResponseEntity<List<RoleDto>> getAllRole(){
+        List<RoleDto> roleDtos = roleService.getAllRole();
+        return new ResponseEntity<>(roleDtos, HttpStatus.OK);
     }
     @GetMapping("/by-id/{id}")
-    public ResponseEntity<Role> getRoleById(@PathVariable Long id){
-        Role role = roleService.getRoleById(id);
-        return new ResponseEntity<>(role, HttpStatus.OK);
+    public ResponseEntity<RoleDto> getRoleById(@PathVariable Long id){
+        RoleDto roleDto = roleService.getRoleById(id);
+        return new ResponseEntity<>(roleDto, HttpStatus.OK);
     }
     @PostMapping("/save-role")
-    public ResponseEntity<Role> addRole(@RequestBody Role role){
-        Role role1 = roleService.addRole(role);
+    public ResponseEntity<RoleDto> addRole(@RequestBody RoleDto roleDto){
+        RoleDto role1 = roleService.addRole(roleDto);
         return new ResponseEntity<>(role1,HttpStatus.CREATED);
     }
     @DeleteMapping("/delete-role/{id}")
