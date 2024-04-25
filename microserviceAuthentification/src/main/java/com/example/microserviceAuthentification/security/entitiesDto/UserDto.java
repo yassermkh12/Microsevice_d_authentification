@@ -1,7 +1,6 @@
 package com.example.microserviceAuthentification.security.entitiesDto;
 
 import com.example.microserviceAuthentification.security.entities.Role;
-import com.example.microserviceAuthentification.security.entities.Roles;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

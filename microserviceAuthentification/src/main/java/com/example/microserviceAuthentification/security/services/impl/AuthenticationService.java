@@ -4,7 +4,6 @@ import com.example.microserviceAuthentification.security.authentications.Authent
 import com.example.microserviceAuthentification.security.authentications.AuthenticationResponse;
 import com.example.microserviceAuthentification.security.authentications.ResgisterRequest;
 import com.example.microserviceAuthentification.security.entities.Role;
-import com.example.microserviceAuthentification.security.entities.Roles;
 import com.example.microserviceAuthentification.security.entities.User;
 import com.example.microserviceAuthentification.security.repositories.IUserRepository;
 //import lombok.var;
