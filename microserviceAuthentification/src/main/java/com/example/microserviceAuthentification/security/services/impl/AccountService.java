@@ -82,4 +82,13 @@ public class AccountService {
         userRepository.save(user);
         log.info("user finale : "+ user);
     }
+
+    public void removeRoleToUser(Long userId, Long roleId){
+        User user = userRepository.findById(userId).orElse(null);
+        Role role = roleRepository.findById(roleId).orElse(null);
+
+        user.getRoles().remove(role);
+
+        userRepository.save(user);
+    }
 }

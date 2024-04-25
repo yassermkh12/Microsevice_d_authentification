@@ -38,9 +38,14 @@ public class AccountController {
         UserDto createUserDto = accountService.addNewUser(userDto);
         return new ResponseEntity<>(createUserDto,HttpStatus.CREATED);
     }
-    @PostMapping("/add-role-to-user/{roleId}/{userId}")
-    public ResponseEntity<Void> addRoleToUser(@PathVariable Long roleId,@PathVariable Long userId){
-        accountService.addRoleToUser(roleId,userId);
+    @PostMapping("/add-role-to-user/{userId}/{roleId}")
+    public ResponseEntity<Void> addRoleToUser(@PathVariable Long userId,@PathVariable Long roleId){
+        accountService.addRoleToUser(userId,roleId);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+    @PostMapping("/remove-role-to-user/{userId}/{roleId}")
+    public ResponseEntity<Void> removeRoleToUser(@PathVariable Long userId,@PathVariable Long roleId){
+        accountService.removeRoleToUser(userId,roleId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
