@@ -2,6 +2,7 @@ package com.example.microserviceAuthentification.security.controllers;
 
 import com.example.microserviceAuthentification.security.entities.Role;
 import com.example.microserviceAuthentification.security.entitiesDto.RoleDto;
+import com.example.microserviceAuthentification.security.services.IRoleService;
 import com.example.microserviceAuthentification.security.services.impl.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,7 +15,7 @@ import java.util.List;
 @RequestMapping("/api/Role")
 public class RoleController {
     @Autowired
-    private RoleService roleService;
+    private IRoleService roleService;
 
     @GetMapping("/roles")
     public ResponseEntity<List<RoleDto>> getAllRole(){

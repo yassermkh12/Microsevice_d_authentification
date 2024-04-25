@@ -3,6 +3,7 @@ package com.example.microserviceAuthentification.security.services.impl;
 import com.example.microserviceAuthentification.security.entities.Role;
 import com.example.microserviceAuthentification.security.entitiesDto.RoleDto;
 import com.example.microserviceAuthentification.security.repositories.IRoleRepository;
+import com.example.microserviceAuthentification.security.services.IRoleService;
 import com.example.microserviceAuthentification.security.transformers.RoleTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class RoleService {
+public class RoleService implements IRoleService {
     @Autowired
     private IRoleRepository roleRepository;
 

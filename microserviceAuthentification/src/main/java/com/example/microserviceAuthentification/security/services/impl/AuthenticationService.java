@@ -8,6 +8,7 @@ import com.example.microserviceAuthentification.security.entities.User;
 import com.example.microserviceAuthentification.security.repositories.IRoleRepository;
 import com.example.microserviceAuthentification.security.repositories.IUserRepository;
 //import lombok.var;
+import com.example.microserviceAuthentification.security.services.IAuthenticationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -20,7 +21,7 @@ import java.util.Set;
 
 @Slf4j
 @Service
-public class AuthenticationService {
+public class AuthenticationService implements IAuthenticationService {
     @Autowired
     private IUserRepository userRepository;
     @Autowired
