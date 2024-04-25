@@ -5,6 +5,7 @@ import com.example.microserviceAuthentification.security.authentications.Authent
 import com.example.microserviceAuthentification.security.authentications.ResgisterRequest;
 import com.example.microserviceAuthentification.security.entities.Role;
 import com.example.microserviceAuthentification.security.entities.User;
+import com.example.microserviceAuthentification.security.repositories.IRoleRepository;
 import com.example.microserviceAuthentification.security.repositories.IUserRepository;
 //import lombok.var;
 import lombok.extern.slf4j.Slf4j;
@@ -28,15 +29,16 @@ public class AuthenticationService {
     private AuthenticationManager authenticationManager;
     @Autowired
     private PasswordEncoder passwordEncoder;
+    @Autowired
+    private IRoleRepository roleRepository;
     public AuthenticationResponse register(ResgisterRequest resgisterRequest){
         log.info("*** le processus de REGISTER commence ***");
         User user = new User();
-        Set<Role> roles = new HashSet<>();
+        Role role = roleRepository.findById(2L).orElse(null);
 
         user.setUserName(resgisterRequest.getUsername());
         user.setPassword(passwordEncoder.encode(resgisterRequest.getPassword()));
-//        user.setRole(resgisterReques);
-        user.setRoles(user.getRoles());
+        user.getRoles().add(role);
 
 
         log.info("l utilisateur depuis user : "+ user);
@@ -44,10 +46,10 @@ public class AuthenticationService {
         userRepository.save(user);
 
         String jwtToken =  jwtService.generateJwtToken(user);
-//        String jwtRefrecheToken = jwtService.generateRefrechTokenFromToken(jwtToken);
+        String jwtRefrecheToken = jwtService.generateRefrechTokenFromToken(jwtToken);
         AuthenticationResponse authenticationResponse = new AuthenticationResponse();
         authenticationResponse.setToken(jwtToken);
-//        authenticationResponse.setRefrechToken(jwtRefrecheToken);
+        authenticationResponse.setRefrechToken(jwtRefrecheToken);
 
         log.info("authentication reponse est : "+ authenticationResponse);
 
