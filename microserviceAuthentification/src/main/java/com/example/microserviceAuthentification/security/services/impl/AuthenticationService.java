@@ -15,6 +15,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -22,6 +23,7 @@ import java.util.Set;
 @Slf4j
 @Service
 public class AuthenticationService implements IAuthenticationService {
+
     @Autowired
     private IUserRepository userRepository;
     @Autowired
@@ -33,6 +35,7 @@ public class AuthenticationService implements IAuthenticationService {
     @Autowired
     private IRoleRepository roleRepository;
 
+    @Transactional
     public AuthenticationResponse register(ResgisterRequest resgisterRequest){
 
         if (userRepository.findByUserName(resgisterRequest.getUsername()) != null) {

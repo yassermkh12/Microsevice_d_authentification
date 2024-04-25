@@ -6,6 +6,8 @@ import com.example.microserviceAuthentification.security.services.impl.UserServi
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -16,7 +18,6 @@ import java.util.*;
 public class UserController {
     @Autowired
     private IUserService accountService;
-
     @GetMapping("/users")
     public ResponseEntity<List<UserDto>> getAllUser(){
         List<UserDto> userDtos = accountService.getAllUser();

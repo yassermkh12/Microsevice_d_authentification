@@ -36,8 +36,10 @@ public class SecurityConfig{
                                 .disable() // Désactiver CSRF
                         )
                         .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers(HttpMethod.POST,"/api/auth/**").permitAll()
-//                        .requestMatchers(HttpMethod.POST, "/save-users").permitAll()
+//                                cette ligne est pour les authorisation
+//                                .requestMatchers(HttpMethod.GET, "/api/user/**").hasAuthority("admin")
+                                .requestMatchers(HttpMethod.POST,"/api/auth/**").permitAll()
+
                                         .anyRequest().authenticated()
                         )
                         .sessionManagement(session -> session
