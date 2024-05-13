@@ -69,9 +69,18 @@ public class AuthenticationService implements IAuthenticationService {
 
     }
 
-    public AuthenticationResponse auhenticate(AuthenticationRequest authenticationRequest){
+    public AuthenticationResponse auhenticate(AuthenticationRequest authenticationRequest) throws GlobalException{
         log.info("*** le processus d authentification commence ***");
 
+        if(userRepository.findByUserName(authenticationRequest.getUsername()) == null){
+            log.info("le username n existe pas dans notre base de donnees");
+            throw new GlobalException("le username n existe pas dans notre base de donnees");
+        }else {
+            if (!passwordEncoder.matches(authenticationRequest.getPassword(),userRepository.findByUserName(authenticationRequest.getUsername()).getPassword())){
+                log.info("Mot de passe incorrect pour l'utilisateur : " + authenticationRequest.getUsername());
+                throw new GlobalException("Mot de passe incorrect pour l'utilisateur : " + authenticationRequest.getUsername());
+            }
+        }
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         authenticationRequest.getUsername(),

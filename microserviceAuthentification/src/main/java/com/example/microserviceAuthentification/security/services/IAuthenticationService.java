@@ -7,5 +7,5 @@ import com.example.microserviceAuthentification.security.exceptions.GlobalExcept
 
 public interface IAuthenticationService {
     public AuthenticationResponse register(ResgisterRequest resgisterRequest) throws GlobalException;
-    public AuthenticationResponse auhenticate(AuthenticationRequest authenticationRequest);
+    public AuthenticationResponse auhenticate(AuthenticationRequest authenticationRequest) throws GlobalException;
 }

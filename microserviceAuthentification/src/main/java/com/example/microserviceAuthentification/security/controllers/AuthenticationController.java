@@ -17,7 +17,7 @@ public class AuthenticationController {
     @Autowired
     private IAuthenticationService authenticationService;
     @PostMapping("/register")
-    public ResponseEntity<?> register(
+    public ResponseEntity<AuthenticationResponse> register(
            @RequestBody ResgisterRequest resgisterRequest
     ){
             return ResponseEntity.ok(authenticationService.register(resgisterRequest));
