@@ -5,12 +5,15 @@ import com.example.microserviceAuthentification.security.authentications.Authent
 import com.example.microserviceAuthentification.security.authentications.ResgisterRequest;
 import com.example.microserviceAuthentification.security.entities.Role;
 import com.example.microserviceAuthentification.security.entities.User;
+import com.example.microserviceAuthentification.security.exceptions.GlobalException;
 import com.example.microserviceAuthentification.security.repositories.IRoleRepository;
 import com.example.microserviceAuthentification.security.repositories.IUserRepository;
 //import lombok.var;
 import com.example.microserviceAuthentification.security.services.IAuthenticationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -36,14 +39,12 @@ public class AuthenticationService implements IAuthenticationService {
     private IRoleRepository roleRepository;
 
     @Transactional
-    public AuthenticationResponse register(ResgisterRequest resgisterRequest){
+    public AuthenticationResponse register(ResgisterRequest resgisterRequest) throws GlobalException {
 
         if (userRepository.findByUserName(resgisterRequest.getUsername()) != null) {
             log.info("username deja utiliser");
-            AuthenticationResponse authenticationResponse = new AuthenticationResponse();
-            authenticationResponse.setUsernameResponse("username deja utiliser");
-            return authenticationResponse;
-        }else {
+            throw new GlobalException("username deja utiliser");
+        }
         log.info("*** le processus de REGISTER commence ***");
         User user = new User();
         Role role = roleRepository.findById(2L).orElse(null);
@@ -65,7 +66,7 @@ public class AuthenticationService implements IAuthenticationService {
         log.info("authentication reponse est : "+ authenticationResponse);
 
         return authenticationResponse;
-        }
+
     }
 
     public AuthenticationResponse auhenticate(AuthenticationRequest authenticationRequest){
