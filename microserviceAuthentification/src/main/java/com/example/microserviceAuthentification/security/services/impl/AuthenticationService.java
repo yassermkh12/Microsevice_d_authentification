@@ -45,12 +45,16 @@ public class AuthenticationService implements IAuthenticationService {
             log.info("username deja utiliser");
             throw new GlobalException("username deja utiliser");
         }
+        if (userRepository.findByEmail(resgisterRequest.getEmail()) != null){
+            throw new GlobalException("l email est deja utiliser");
+        }
         log.info("*** le processus de REGISTER commence ***");
         User user = new User();
         Role role = roleRepository.findById(2L).orElse(null);
 
         user.setUserName(resgisterRequest.getUsername());
         user.setPassword(passwordEncoder.encode(resgisterRequest.getPassword()));
+        user.setEmail(resgisterRequest.getEmail());
         user.getRoles().add(role);
 
         log.info("l utilisateur depuis user : "+ user);

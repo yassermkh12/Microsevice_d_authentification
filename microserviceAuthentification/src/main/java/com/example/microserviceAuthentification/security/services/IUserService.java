@@ -1,6 +1,7 @@
 package com.example.microserviceAuthentification.security.services;
 
 import com.example.microserviceAuthentification.security.entitiesDto.UserDto;
+import com.example.microserviceAuthentification.security.exceptions.GlobalException;
 
 import java.util.List;
 
@@ -11,4 +12,5 @@ public interface IUserService {
     public UserDto getByUserName(String userName);
     public void addRoleToUser(Long userId,Long roleId);
     public void removeRoleToUser(Long userId, Long roleId);
+    public UserDto getByEmail(String email) throws GlobalException;
 }

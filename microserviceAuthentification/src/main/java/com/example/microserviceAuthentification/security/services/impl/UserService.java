@@ -3,6 +3,7 @@ package com.example.microserviceAuthentification.security.services.impl;
 import com.example.microserviceAuthentification.security.entities.Role;
 import com.example.microserviceAuthentification.security.entities.User;
 import com.example.microserviceAuthentification.security.entitiesDto.UserDto;
+import com.example.microserviceAuthentification.security.exceptions.GlobalException;
 import com.example.microserviceAuthentification.security.repositories.IRoleRepository;
 import com.example.microserviceAuthentification.security.repositories.IUserRepository;
 import com.example.microserviceAuthentification.security.services.IUserService;
@@ -91,5 +92,15 @@ public class UserService implements IUserService {
         user.getRoles().remove(role);
 
         userRepository.save(user);
+    }
+
+    public UserDto getByEmail(String email) throws GlobalException{
+        User user = userRepository.findByEmail(email).orElseThrow(
+                () -> new GlobalException("il n y a pas de user avec cet email")
+        );
+        if(user == null){
+            throw new GlobalException("il n y a pas de user avec cet email");
+        }
+        return UserTransformer.entityToDto(user);
     }
 }

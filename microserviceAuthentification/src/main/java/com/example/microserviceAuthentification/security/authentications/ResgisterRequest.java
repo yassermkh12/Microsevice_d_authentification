@@ -9,5 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ResgisterRequest {
     private String username;
+    private String email;
     private String password;
 }

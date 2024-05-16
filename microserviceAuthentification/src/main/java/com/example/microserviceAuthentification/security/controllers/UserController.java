@@ -47,4 +47,10 @@ public class UserController {
         accountService.removeRoleToUser(userId,roleId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping("/find-by-email/{email}")
+    public ResponseEntity<UserDto> getByEmail(@PathVariable String email){
+        UserDto userDto = accountService.getByEmail(email);
+        return new ResponseEntity<>(userDto, HttpStatus.OK);
+    }
 }
