@@ -103,4 +103,14 @@ public class UserService implements IUserService {
         }
         return UserTransformer.entityToDto(user);
     }
+
+    public void updatePasswordByEmail(String email, String password) throws GlobalException{
+        User user = userRepository.findByEmail(email).orElseThrow(
+                () -> new GlobalException("il n y a pas de user avec cet email")
+        );
+
+        user.setPassword(passwordEncoder.encode(password));
+
+        userRepository.save(user);
+    }
 }

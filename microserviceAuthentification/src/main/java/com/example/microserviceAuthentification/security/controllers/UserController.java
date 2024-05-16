@@ -53,4 +53,9 @@ public class UserController {
         UserDto userDto = accountService.getByEmail(email);
         return new ResponseEntity<>(userDto, HttpStatus.OK);
     }
+    @PutMapping("/update-password-by-email/{email}/{password}")
+    public ResponseEntity<Void> updatePasswordByEmail(@PathVariable String email,@PathVariable String password){
+        accountService.updatePasswordByEmail(email,password);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

@@ -13,4 +13,5 @@ public interface IUserService {
     public void addRoleToUser(Long userId,Long roleId);
     public void removeRoleToUser(Long userId, Long roleId);
     public UserDto getByEmail(String email) throws GlobalException;
+    public void updatePasswordByEmail(String email, String password) throws GlobalException;
 }
