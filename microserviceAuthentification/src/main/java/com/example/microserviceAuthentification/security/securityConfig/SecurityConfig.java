@@ -41,7 +41,8 @@ public class SecurityConfig{
 //                                cette ligne est pour les authorisation
 //                                .requestMatchers(HttpMethod.GET, "/api/user/**").hasAuthority("admin")
                                         .requestMatchers(HttpMethod.POST,"/api/recuperation/**").permitAll()
-                                .requestMatchers(HttpMethod.POST,"/api/auth/**").permitAll()
+                                        .requestMatchers(HttpMethod.PUT,"/api/recuperation/**").permitAll()
+                                        .requestMatchers(HttpMethod.POST,"/api/auth/**").permitAll()
 
                                         .anyRequest().authenticated()
                         )

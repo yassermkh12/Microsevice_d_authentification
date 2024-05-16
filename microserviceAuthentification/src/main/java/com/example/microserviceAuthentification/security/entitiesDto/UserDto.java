@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.Set;
 
 @Data
@@ -16,5 +17,7 @@ public class UserDto {
     private String email;
     private String password;
 //    private Roles role;
+    private String verificationCode;
+    private LocalDateTime verificationCodeExpiration;
     private Set<Role> roles;
 }

@@ -16,6 +16,8 @@ public class UserTransformer {
         userDto.setPassword(user.getPassword());
 //        userDto.setRole(user.getRole());
         userDto.setRoles(user.getRoles());
+        userDto.setVerificationCode(user.getVerificationCode());
+        userDto.setVerificationCodeExpiration(user.getVerificationCodeExpiration());
 
         return userDto;
     }
@@ -29,6 +31,8 @@ public class UserTransformer {
         user.setPassword(userDto.getPassword());
 //        user.setRole(userDto.getRole());
         user.setRoles(userDto.getRoles());
+        user.setVerificationCode(userDto.getVerificationCode());
+        user.setVerificationCodeExpiration(userDto.getVerificationCodeExpiration());
 
         return user;
     }
