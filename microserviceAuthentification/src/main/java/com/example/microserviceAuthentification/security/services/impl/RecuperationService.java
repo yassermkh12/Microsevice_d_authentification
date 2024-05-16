@@ -4,6 +4,7 @@ import com.example.microserviceAuthentification.security.entities.User;
 import com.example.microserviceAuthentification.security.entitiesDto.UserDto;
 import com.example.microserviceAuthentification.security.exceptions.GlobalException;
 import com.example.microserviceAuthentification.security.repositories.IUserRepository;
+import com.example.microserviceAuthentification.security.services.IRecuperationService;
 import com.example.microserviceAuthentification.security.services.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,7 @@ import java.util.UUID;
 
 @Slf4j
 @Service
-public class RecuperationService {
-
+public class RecuperationService implements IRecuperationService {
     @Autowired
     private IUserRepository userRepository;
     @Autowired
