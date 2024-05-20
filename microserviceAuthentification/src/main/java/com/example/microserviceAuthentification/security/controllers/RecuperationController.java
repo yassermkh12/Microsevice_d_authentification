@@ -7,13 +7,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/recuperation")
 public class RecuperationController {
     @Autowired
     private IRecuperationService recuperationService;
 
-    @PostMapping("/{email}")
+    @GetMapping("/forgotPassword/{email}")
     public ResponseEntity<Void> forgotPassword(@PathVariable String email){
         recuperationService.forgotPassword(email);
         return new ResponseEntity<>(HttpStatus.OK);
@@ -23,7 +24,7 @@ public class RecuperationController {
         recuperationService.updatePasswordByEmail(email,password);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-    @PostMapping("/verify-code/{email}/{code}")
+    @GetMapping("/verify-code/{email}/{code}")
     public ResponseEntity<Void> verifyCode(@PathVariable String email,@PathVariable String code){
         recuperationService.verifyCode(email,code);
         return new ResponseEntity<>(HttpStatus.OK);

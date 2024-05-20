@@ -40,7 +40,7 @@ public class SecurityConfig{
                         .authorizeHttpRequests(authorize -> authorize
 //                                cette ligne est pour les authorisation
 //                                .requestMatchers(HttpMethod.GET, "/api/user/**").hasAuthority("admin")
-                                        .requestMatchers(HttpMethod.POST,"/api/recuperation/**").permitAll()
+                                        .requestMatchers(HttpMethod.GET,"/api/recuperation/**").permitAll()
                                         .requestMatchers(HttpMethod.PUT,"/api/recuperation/**").permitAll()
                                         .requestMatchers(HttpMethod.POST,"/api/auth/**").permitAll()
 
