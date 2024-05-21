@@ -45,7 +45,7 @@ public class AuthenticationService implements IAuthenticationService {
             log.info("username deja utiliser");
             throw new GlobalException("username deja utiliser");
         }
-        if (userRepository.findByEmail(resgisterRequest.getEmail()) != null){
+        if (userRepository.findByEmail(resgisterRequest.getEmail()).isPresent()){
             throw new GlobalException("l email est deja utiliser");
         }
         log.info("*** le processus de REGISTER commence ***");

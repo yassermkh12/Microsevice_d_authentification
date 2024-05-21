@@ -19,7 +19,7 @@ public class RecuperationController {
         recuperationService.forgotPassword(email);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-    @PutMapping("/update-password-by-email/{email}/{password}")
+    @GetMapping("/update-password-by-email/{email}/{password}")
     public ResponseEntity<Void> updatePasswordByEmail(@PathVariable String email,@PathVariable String password){
         recuperationService.updatePasswordByEmail(email,password);
         return new ResponseEntity<>(HttpStatus.OK);
