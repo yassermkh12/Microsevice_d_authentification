@@ -1,6 +1,7 @@
 package com.example.microserviceAuthentification.security.services;
 
 import com.example.microserviceAuthentification.security.entitiesDto.RoleDto;
+import com.example.microserviceAuthentification.security.exceptions.GlobalException;
 
 import java.util.List;
 
@@ -9,4 +10,5 @@ public interface IRoleService {
     public RoleDto getRoleById(Long id);
     public RoleDto addRole(RoleDto roleDto);
     public void deleteRole(Long id);
+    public RoleDto updateRole(Long id, RoleDto roleDtoUpdate) throws GlobalException;
 }

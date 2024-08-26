@@ -2,6 +2,7 @@ package com.example.microserviceAuthentification.security.services.impl;
 
 import com.example.microserviceAuthentification.security.entities.Role;
 import com.example.microserviceAuthentification.security.entitiesDto.RoleDto;
+import com.example.microserviceAuthentification.security.exceptions.GlobalException;
 import com.example.microserviceAuthentification.security.repositories.IRoleRepository;
 import com.example.microserviceAuthentification.security.services.IRoleService;
 import com.example.microserviceAuthentification.security.transformers.RoleTransformer;
@@ -30,6 +31,18 @@ public class RoleService implements IRoleService {
        Role role = RoleTransformer.dtoToEntity(roleDto);
        role = roleRepository.save(role);
        return RoleTransformer.entityToDto(role);
+    }
+
+    public RoleDto updateRole(Long id, RoleDto roleDtoUpdate) throws GlobalException{
+        Role role = roleRepository.findById(id).orElse(null);
+        if(role != null){
+            role.setName(roleDtoUpdate.getName());
+
+            roleRepository.save(role);
+            return RoleTransformer.entityToDto(role);
+        }else {
+            throw new GlobalException("il n y a pas de role avec id : "+ id);
+        }
     }
 
     public void deleteRole(Long id){

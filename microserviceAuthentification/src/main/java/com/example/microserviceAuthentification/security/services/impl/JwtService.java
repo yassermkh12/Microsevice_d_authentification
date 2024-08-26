@@ -33,7 +33,7 @@ public class JwtService {
 
         Map<String, Object> claims = new HashMap<>();
 
-        claims.put("roles", userDetails.getAuthorities());
+        claims.put("role", userDetails.getAuthorities());
 
         String token = Jwts.builder()
                 .setClaims(claims)
@@ -59,7 +59,7 @@ public class JwtService {
 
         Map<String, Object> claims = new HashMap<>();
 
-        claims.put("roles", userDetails.getAuthorities());
+        claims.put("role", userDetails.getAuthorities());
 
         String token = Jwts.builder()
                 .setClaims(claims)

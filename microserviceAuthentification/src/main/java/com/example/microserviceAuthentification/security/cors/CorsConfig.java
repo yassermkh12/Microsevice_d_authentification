@@ -18,7 +18,7 @@ public class CorsConfig implements WebMvcConfigurer {
     public String allowedOrigins() {
         try {
             InetAddress ip = InetAddress.getLocalHost();
-            log.info("ip adresse : "+ ip.getHostAddress() );
+            log.info("ip adresse : "+ ip.getHostAddress());
             return "http://" + ip.getHostAddress() + ":4200";
         } catch (UnknownHostException e) {
             e.printStackTrace();
@@ -28,7 +28,7 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
-                .allowedOrigins(allowedOrigins())
+                .allowedOrigins("http://localhost:4200")
                 .allowedMethods("DELETE", "GET", "POST", "PATCH", "PUT")
                 .allowedHeaders("Access-Control-Allow-Headers", "Access-Control-Allow-Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", "Origin", "Cache-Control", "Content-Type", "Authorization")
                 .exposedHeaders("Access-Control-Allow-Headers", "Access-Control-Allow-Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", "Origin", "Cache-Control", "Content-Type", "Authorization")

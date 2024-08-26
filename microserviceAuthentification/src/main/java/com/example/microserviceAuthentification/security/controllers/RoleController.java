@@ -32,8 +32,13 @@ public class RoleController {
         RoleDto role1 = roleService.addRole(roleDto);
         return new ResponseEntity<>(role1,HttpStatus.CREATED);
     }
+    @PutMapping("/update-role/{id}")
+    public ResponseEntity<RoleDto> updateRole(@PathVariable Long id, @RequestBody RoleDto roleDto){
+        RoleDto roleDtoUpdate = roleService.updateRole(id,roleDto);
+        return new ResponseEntity<>(roleDtoUpdate,HttpStatus.OK);
+    }
     @DeleteMapping("/delete-role/{id}")
-    public ResponseEntity<Void> deletRole(@PathVariable Long id){
+    public ResponseEntity<Void> deleteRole(@PathVariable Long id){
         roleService.deleteRole(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
