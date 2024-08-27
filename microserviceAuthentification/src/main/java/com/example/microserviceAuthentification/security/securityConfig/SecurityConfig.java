@@ -39,7 +39,11 @@ public class SecurityConfig{
                         )
                         .authorizeHttpRequests(authorize -> authorize
 //                                cette ligne est pour les authorisation
-//                                .requestMatchers(HttpMethod.GET, "/api/user/**").hasAuthority("admin")
+                                        .requestMatchers(HttpMethod.GET, "/api/Role/**").hasAuthority("ADMIN")
+                                        .requestMatchers(HttpMethod.POST,"/api/Role/**").hasAuthority("ADMIN")
+                                        .requestMatchers(HttpMethod.PUT, "/api/Role/**").hasAuthority("ADMIN")
+                                        .requestMatchers(HttpMethod.DELETE,"/api/Role/**").hasAuthority("ADMIN")
+
                                         .requestMatchers(HttpMethod.GET,"/api/recuperation/**").permitAll()
                                         .requestMatchers(HttpMethod.PUT,"/api/recuperation/**").permitAll()
                                         .requestMatchers(HttpMethod.POST,"/api/auth/**").permitAll()
