@@ -1,8 +1,6 @@
 package com.example.microserviceAuthentification.security.controllers;
 
-import com.example.microserviceAuthentification.security.authentications.AuthenticationRequest;
-import com.example.microserviceAuthentification.security.authentications.AuthenticationResponse;
-import com.example.microserviceAuthentification.security.authentications.ResgisterRequest;
+import com.example.microserviceAuthentification.security.authentications.*;
 import com.example.microserviceAuthentification.security.exceptions.GlobalException;
 import com.example.microserviceAuthentification.security.services.IAuthenticationService;
 import com.example.microserviceAuthentification.security.services.impl.AuthenticationService;
@@ -21,6 +19,20 @@ public class AuthenticationController {
            @RequestBody ResgisterRequest resgisterRequest
     ){
             return ResponseEntity.ok(authenticationService.register(resgisterRequest));
+    }
+
+    @PostMapping("/register-etudiant")
+    public ResponseEntity<AuthenticationResponse> registerEtudiant(
+            @RequestBody RegisterRequestEtudiant resgisterRequest
+    ){
+        return ResponseEntity.ok(authenticationService.registerEtudiant(resgisterRequest));
+    }
+
+    @PostMapping("/register-employe")
+    public ResponseEntity<AuthenticationResponse> registerEmploye(
+            @RequestBody RegisterRequestEmploye resgisterRequest
+    ){
+        return ResponseEntity.ok(authenticationService.registerEmploye(resgisterRequest));
     }
 
     @PostMapping("/authenticate")

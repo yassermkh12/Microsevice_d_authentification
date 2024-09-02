@@ -1,8 +1,8 @@
 package com.example.microserviceAuthentification.security.services.impl;
 
-import com.example.microserviceAuthentification.security.authentications.AuthenticationRequest;
-import com.example.microserviceAuthentification.security.authentications.AuthenticationResponse;
-import com.example.microserviceAuthentification.security.authentications.ResgisterRequest;
+import com.example.microserviceAuthentification.security.authentications.*;
+import com.example.microserviceAuthentification.security.entities.Employe;
+import com.example.microserviceAuthentification.security.entities.Etudiant;
 import com.example.microserviceAuthentification.security.entities.Role;
 import com.example.microserviceAuthentification.security.entities.User;
 import com.example.microserviceAuthentification.security.exceptions.GlobalException;
@@ -62,6 +62,82 @@ public class AuthenticationService implements IAuthenticationService {
         userRepository.save(user);
 
         String jwtToken =  jwtService.generateJwtToken(user);
+        String jwtRefrecheToken = jwtService.generateRefrechTokenFromToken(jwtToken);
+        AuthenticationResponse authenticationResponse = new AuthenticationResponse();
+        authenticationResponse.setToken(jwtToken);
+        authenticationResponse.setRefrechToken(jwtRefrecheToken);
+
+        log.info("authentication reponse est : "+ authenticationResponse);
+
+        return authenticationResponse;
+
+    }
+
+    @Transactional
+    public AuthenticationResponse registerEtudiant(RegisterRequestEtudiant resgisterRequest) throws GlobalException {
+
+        if (userRepository.findByUserName(resgisterRequest.getUsername()) != null) {
+            log.info("username deja utiliser");
+            throw new GlobalException("username deja utiliser");
+        }
+        if (userRepository.findByEmail(resgisterRequest.getEmail()).isPresent()){
+            throw new GlobalException("l email est deja utiliser");
+        }
+        log.info("*** le processus de REGISTER commence ***");
+//        User user = new User();
+        Etudiant etudiant = new Etudiant();
+        Role role = roleRepository.findById(2L).orElse(null);
+
+        etudiant.setUserName(resgisterRequest.getUsername());
+        etudiant.setPassword(passwordEncoder.encode(resgisterRequest.getPassword()));
+        etudiant.setEmail(resgisterRequest.getEmail());
+        etudiant.getRoles().add(role);
+
+        etudiant.setDepartement(resgisterRequest.getDepartement());
+
+        log.info("l utilisateur depuis etudiant : "+ etudiant);
+        log.info("l utilisateur depuis registerRequest : "+ resgisterRequest);
+        userRepository.save(etudiant);
+
+        String jwtToken =  jwtService.generateJwtToken(etudiant);
+        String jwtRefrecheToken = jwtService.generateRefrechTokenFromToken(jwtToken);
+        AuthenticationResponse authenticationResponse = new AuthenticationResponse();
+        authenticationResponse.setToken(jwtToken);
+        authenticationResponse.setRefrechToken(jwtRefrecheToken);
+
+        log.info("authentication reponse est : "+ authenticationResponse);
+
+        return authenticationResponse;
+
+    }
+
+    @Transactional
+    public AuthenticationResponse registerEmploye(RegisterRequestEmploye resgisterRequest) throws GlobalException {
+
+        if (userRepository.findByUserName(resgisterRequest.getUsername()) != null) {
+            log.info("username deja utiliser");
+            throw new GlobalException("username deja utiliser");
+        }
+        if (userRepository.findByEmail(resgisterRequest.getEmail()).isPresent()){
+            throw new GlobalException("l email est deja utiliser");
+        }
+        log.info("*** le processus de REGISTER commence ***");
+//        User user = new User();
+        Employe employe = new Employe();
+        Role role = roleRepository.findById(2L).orElse(null);
+
+        employe.setUserName(resgisterRequest.getUsername());
+        employe.setPassword(passwordEncoder.encode(resgisterRequest.getPassword()));
+        employe.setEmail(resgisterRequest.getEmail());
+        employe.getRoles().add(role);
+
+        employe.setMajor(resgisterRequest.getMajor());
+
+        log.info("l utilisateur depuis etudiant : "+ employe);
+        log.info("l utilisateur depuis registerRequest : "+ resgisterRequest);
+        userRepository.save(employe);
+
+        String jwtToken =  jwtService.generateJwtToken(employe);
         String jwtRefrecheToken = jwtService.generateRefrechTokenFromToken(jwtToken);
         AuthenticationResponse authenticationResponse = new AuthenticationResponse();
         authenticationResponse.setToken(jwtToken);
